@@ -2158,7 +2158,7 @@ body {
   margin: 0;
 }
 
-picture, img {
+picture, img, h4 {
   display: block;
 }
 
@@ -2293,6 +2293,10 @@ a {
 white-a:hover {
   color: #e6e6e6;
   background: #0a0a0a;
+}
+
+.hero-image img {
+  width: 100%;
 }
 
 .hidden-link {
@@ -2433,15 +2437,14 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: justify;
 	}
 } */
+/* Im really not sure this is a great idea smaller text in bold doesnt look great
 .bold-big {
-  font-weight: normal;
-}
-@media (min-width: 1024px) {
-  .bold-big {
-    font-weight: bold;
-  }
-}
+	font-weight: normal;
 
+	@media (min-width: map-get($breakpoints, large)) {
+	font-weight: bold;
+	}
+} */
 nav, .menu-primary-container, .force-menu-style {
   font-weight: bold;
   font-size: 1.2em;
@@ -2523,6 +2526,14 @@ iframe {
 /*
 	grids
 ------------------------------------------------ */
+.footer-contact-areas {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
 .site {
   display: grid;
   min-height: 100vh;
@@ -2530,17 +2541,16 @@ iframe {
 
 footer {
   align-self: end;
+  margin-bottom: 0;
 }
 
 /*
 	service grids
 ------------------------------------------------ */
-/*
 .hero-logo {
-	display: grid;
-	justify-items: center;
+  fill: #fefefe;
 }
-*/
+
 .hero-logo a {
   display: block;
   max-width: 33%;
@@ -2600,8 +2610,15 @@ footer {
 }
 
 .footer-icons {
-  display: grid;
-  justify-items: center;
+  /* display: grid;
+  justify-items: center; // I think this was the whole point but I can probably do it easier with a flex */
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .footer-icons {
+    flex-direction: row;
+  }
 }
 
 .footer-icon-icon {
@@ -3147,6 +3164,24 @@ img .alignleft {
   margin-right: auto;
 }
 
+.service {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .service {
+    flex-direction: row;
+  }
+}
+
+.service > div {
+  flex: 1;
+  margin: 1rem;
+}
+
 .grid-x {
   display: flex;
 }
@@ -3166,6 +3201,15 @@ img .alignleft {
   }
 }
 
+.show-for-large {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .show-for-large {
+    display: block;
+  }
+}
+
 .footer-extra {
   display: block;
   margin-top: 0;
@@ -3179,6 +3223,12 @@ img .alignleft {
 .wp-block-colum {
   flex-basis: calc(50% - 16px);
   flex-grow: 0;
+}
+
+.copyright {
+  float: left;
+  width: 100%;
+  padding-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

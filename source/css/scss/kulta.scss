@@ -65,7 +65,7 @@ body {
     margin: 0; // browser reset
 }
 
-picture, img {
+picture, img, h4 {
 	display: block;
 }
 /* Finish Reset */
@@ -191,10 +191,13 @@ a {
 	color: $white;
 }
 
-
 white-a:hover {
 	color: $light-gray;
 	background: $black;
+}
+
+.hero-image img {
+	width: 100%;
 }
 
 .hidden-link {
@@ -340,13 +343,14 @@ h1, h2, h3, h4, h5, h6 {
 	}
 } */
 
+/* Im really not sure this is a great idea smaller text in bold doesnt look great
 .bold-big {
 	font-weight: normal;
 
 	@media (min-width: map-get($breakpoints, large)) {
 	font-weight: bold;
 	}
-}
+} */
 
 nav, .menu-primary-container, .force-menu-style {
 	font-weight: bold;
@@ -431,6 +435,15 @@ iframe {
 	grids
 ------------------------------------------------ */
 
+.footer-contact-areas {
+	max-width: 75rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: $global-padding;
+}
+
+
 .site {
 	display: grid; // this just for the 100 vh but there might be a smarter way
 	min-height: 100vh;
@@ -438,18 +451,16 @@ iframe {
 
 footer {
 	align-self: end;
+	margin-bottom: 0; // browser reset
 }
 
 /*
 	service grids
 ------------------------------------------------ */
 
-/*
 .hero-logo {
-	display: grid;
-	justify-items: center;
+	fill: $white;
 }
-*/
 
 .hero-logo a {
 	display: block;
@@ -512,8 +523,14 @@ footer {
 }
 
 .footer-icons {
-	display: grid;
-	justify-items: center;
+	/* display: grid;
+	justify-items: center; // I think this was the whole point but I can probably do it easier with a flex */
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		flex-direction: row;
+	}
 }
 
 .footer-icon-icon { //terrible names
@@ -1121,6 +1138,23 @@ img .alignleft {
 	margin-right: auto;
 }
 
+.service {
+	max-width: 75rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		flex-direction: row;
+	}
+}
+
+.service > div {
+	flex: 1;
+	margin: $global-padding;
+}
+
 .grid-x {
 	display: flex;
 }
@@ -1140,6 +1174,13 @@ img .alignleft {
 	}
 }
 
+.show-for-large {
+	display: none;
+	@media (min-width: map-get($breakpoints, large)) {
+		display: block; // not sure if this is exactly right
+	}
+}
+
 .footer-extra {
 	display: block;
 	margin-top: 0;
@@ -1153,4 +1194,10 @@ img .alignleft {
 .wp-block-colum {
 	flex-basis: calc(50% - 16px);
 	flex-grow: 0;
+}
+
+.copyright {
+	float: left; // needed to have the p margin inside of this
+	width: 100%;
+	padding-top: 1rem;
 }
