@@ -7,7 +7,15 @@
  * and define them against variables that we can utilise anywhere throughout the project.
  */
 
-
+ $primary-color: #1e93bd;
+ $secondary-color: #006087;
+ $warning-color: #ffae00;
+ 
+ $black: #0a0a0a;
+ $white: #fefefe;
+ $light-gray: #e6e6e6;
+ $medium-gray: #cacaca;
+ $dark-gray: #8a8a8a;
 
 
 
@@ -26,9 +34,6 @@ $color-body-bg: $color-neutral-white !default;
  */
 $color-text-highlight: $color-neutral-gray-93;
 $color-text-highlight-bg: $color-neutral-gray-13;
-
-
-
 
 
 /*------------------------------------*\

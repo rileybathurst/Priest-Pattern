@@ -30,6 +30,30 @@ hr {
     margin: 1rem 0;
 }
 
+.split__box {
+    display: grid;
+    margin: 0 auto 2rem auto;
+	justify-items: center;
+}
+
+.splitter {
+    border: none; // we overwrite this next
+    border-bottom: 2px solid $secondary-color;
+	width: calc(100% - 2rem);
+	grid-row: 1;
+    grid-column: 1;
+}
+
+.splitter--cross {
+    border-left: 2px solid $secondary-color;
+    border-right: 2px solid $secondary-color;
+    width: 1rem;
+	background: $white;
+	grid-row: 1;
+    grid-column: 1;
+    transform: skewX(-15deg); // guess and check
+}
+
 /**
  * Selection styles
  */
