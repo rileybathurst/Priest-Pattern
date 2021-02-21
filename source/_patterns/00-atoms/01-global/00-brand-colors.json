@@ -9,7 +9,12 @@
       "name": "$secondary-color",
       "value": "#006087",
       "comment": ""
-    }
+    },
+    {
+      "name": "Gradient",
+      "value": "linear-gradient(180deg, rgba(30,141,183,1) 0%, rgba(0,96,135,1) 100%)",
+      "comment": ""
+    },
   ],
   "meta": {
     "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"

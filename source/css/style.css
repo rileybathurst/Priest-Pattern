@@ -2470,9 +2470,35 @@ h1, h2, h3, h4, h5, h6 {
 	}
 } */
 nav, .menu-primary-container, .force-menu-style {
-  font-weight: bold;
   font-size: 1.2em;
-  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.1rem;
+}
+@media (min-width: 1024px) {
+  nav, .menu-primary-container, .force-menu-style {
+    font-family: "Roboto Slab", serif;
+  }
+}
+
+.menu-primary-container > ul > li {
+  padding: 1rem 0.5rem;
+  margin-bottom: 2px;
+  margin-top: -2px;
+}
+
+.menu-primary-container > ul > li > a {
+  padding: 1rem;
+}
+
+.menu-primary-container > ul > a,
+.menu-primary-container > ul > li > a {
+  border-bottom: 5px solid #006087;
+}
+
+.menu-primary-container > ul > a:hover,
+.menu-primary-container > ul > li > a:hover {
+  color: #e5e5e5;
+  background: #003c54;
+  border-bottom: 5px solid #001721;
 }
 
 .menu {
