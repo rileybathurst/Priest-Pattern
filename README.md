@@ -11,7 +11,6 @@ living online at [priestpattern.rileybathurst.com](http://priestpattern.rileybat
 The problem being I don't hold the hosting so it might need a new tld
 
 .design is $39.99 annually
-
 .style is $34.99
 
 
