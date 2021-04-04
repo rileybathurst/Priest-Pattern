@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "name": "$header-font-family",
-      "value": "'Roboto Slab', serif",
+      "name": "$major-font-family",
+      "value": "'Roboto Slab', sans-serif",
       "comment": ""
     },
     {

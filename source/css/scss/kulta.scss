@@ -39,7 +39,9 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large); // should this not include all the way to xx if I have it above?
+$breakpoint-classes: (
+  small medium large
+); // should this not include all the way to xx if I have it above?
 
 $primary-color: #1e93bd;
 $secondary-color: #006087;
@@ -55,32 +57,36 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-grid-gap: $global-margin;
 
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$header-font-family: 'Roboto Slab', serif;
+$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: "Roboto Slab", serif;
 
 $page-width: 77em;
 
 /* Reset */
 body {
-    margin: 0; // browser reset
+  margin: 0; // browser reset
 }
 
-picture, img, h4 {
-	display: block;
+picture,
+img,
+h4 {
+  display: block;
 }
 /* Finish Reset */
 
 html {
-    font-family: $body-font-family;
+  font-family: $body-font-family;
 }
 
 main {
-	max-width: 100vw;
+  max-width: 100vw;
 }
 
 // typescale.com 1.200 Minor Third
 
-html {font-size: 100%;} /*16px*/
+html {
+  font-size: 100%;
+} /*16px*/
 
 body {
   background-color: white;
@@ -89,9 +95,22 @@ body {
   color: #333;
 }
 
-p {margin-bottom: 1.15rem;}
+p {
+  margin-bottom: 1.15rem;
+}
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin: 2.75rem 0 1.05rem;
   font-family: $header-font-family;
   font-weight: 400;
@@ -99,127 +118,103 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1 {
-	margin-top: 0;
-	font-size: 2.488em;
+  margin-top: 0;
+  font-size: 2.488em;
 }
 
-h2 {font-size: 2.074em;}
+h2 {
+  font-size: 2.074em;
+}
 
-h3 {font-size: 1.728em;}
+h3 {
+  font-size: 1.728em;
+}
 
-h4 {font-size: 1.44em;}
+h4 {
+  font-size: 1.44em;
+}
 
-h5 {font-size: 1.2em;}
+h5 {
+  font-size: 1.2em;
+}
 
-small, .text_small {font-size: 0.833em;}
+small,
+.text_small {
+  font-size: 0.833em;
+}
 
 p {
-	// margin-bottom: $global-margin;
-	line-height: 1.6;
-	font-family: "Open Sans", sans-serif;
+  // margin-bottom: $global-margin;
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
-	color: #1e93bd;
-	text-decoration: none;
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .bg-primary {
-	background: $primary-color;
-	// this should have a color as well?
+  background: $primary-color;
+  // this should have a color as well?
 
-	a {
-		color: $white;
-	}
-	a:hover {
-		color: $light-gray;
-	}
-	cite {
-		color: $medium-gray;
-	}
+  a {
+    color: $white;
+  }
+  a:hover {
+    color: $light-gray;
+  }
+  cite {
+    color: $medium-gray;
+  }
 }
 
-.bg-secondary {
-	background: $secondary-color;
-
-	a {
-	color: $white;
-	}
-	a:hover {
-	color: $light-gray;
-	}
-}
-
-.bg-light-gray {
-	background: $light-gray;
-}
-
-.bg-medium-gray {
-	background: $medium-gray;
-}
-
-.bg-dark-gray {
-	background: $dark-gray;
-
-	a {
-	color: $white;
-	}
-
-	a:hover {
-	color: $light-gray;
-	}
-}
-
-.bg-black {
-	background: $black;
-	color: $white;
-
-	.hidden-link {
-	color: $white;
-	}
-}
-
+// this is a link
 .primary-text {
-	color: $primary-color;
+  color: $primary-color;
 }
 
 .white-a {
-	color: $white;
+  color: $white;
 }
 
-white-a:hover {
-	color: $light-gray;
-	background: $black;
+.white-a:hover {
+  color: $light-gray;
+  background: $black;
 }
 
 .hero-image img {
-	width: 100%;
+  width: 100%;
 }
 
 .hidden-link {
-	color: $black;
+  color: $black;
 }
 
 .shadow {
-	// box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); // current, Im not sure why I was doing 2 shadows seems overly complicated
-	/* offset-x | offset-y | blur-radius | spread-radius | color */
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+  // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); // current, Im not sure why I was doing 2 shadows seems overly complicated
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 }
 
 .shadow-darker {
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.32),0 2px 10px 0 rgba(0,0,0,0.24);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.32), 0 2px 10px 0 rgba(0, 0, 0, 0.24);
 }
 
 .attachment-post-thumbnail {
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .excerpt {
-	color: blue;
+  color: blue;
 }
 
 /*  2. Spacing
@@ -227,77 +222,77 @@ white-a:hover {
 -------------------------------------------------------------- */
 
 .ngm-top {
-	margin-top: -$global-margin;
+  margin-top: -$global-margin;
 }
 
 .ngm-bottom {
-	margin-bottom: -$global-margin;
+  margin-bottom: -$global-margin;
 }
 
 .gm-top {
-	margin-top: $global-margin;
+  margin-top: $global-margin;
 }
 
 .gm-bottom {
-	margin-bottom: $global-margin;
+  margin-bottom: $global-margin;
 }
 
 .gm-tb {
-	margin-top: $global-margin;
-	margin-bottom: $global-margin;
+  margin-top: $global-margin;
+  margin-bottom: $global-margin;
 }
 
 .gp-top {
-	padding-top: $global-padding;
+  padding-top: $global-padding;
 }
 
 .gp2-top {
-	padding-top: $global-padding*2;
+  padding-top: $global-padding * 2;
 }
 
 .gp-bottom {
-	padding-bottom: $global-padding;
+  padding-bottom: $global-padding;
 }
 
 .gp3-bottom {
-	padding-bottom: $global-padding*3;
+  padding-bottom: $global-padding * 3;
 }
 
 .gp-tb {
-	padding-top: $global-margin;
-	padding-bottom: $global-margin;
+  padding-top: $global-margin;
+  padding-bottom: $global-margin;
 }
 
 .gp2-tb {
-	padding-top: $global-margin*2;
-	padding-bottom: $global-margin*2;
+  padding-top: $global-margin * 2;
+  padding-bottom: $global-margin * 2;
 }
 
 .gp-tb-large {
-	@media (min-width: map-get($breakpoints, large)) {
-		padding-top: $global-margin;
-		padding-bottom: $global-margin;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    padding-top: $global-margin;
+    padding-bottom: $global-margin;
+  }
 }
 
 .gm-4 {
-	margin: $global-margin;
+  margin: $global-margin;
 }
 
 .gm-3 {
-	margin: 0 $global-margin $global-margin $global-margin; // top | right | bottom | left
+  margin: 0 $global-margin $global-margin $global-margin; // top | right | bottom | left
 }
 
 .gp-4 {
-	padding: $global-padding;
+  padding: $global-padding;
 }
 
 .no-margin-bottom {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 no-padding-top {
-	padding-top: 0;
+  padding-top: 0;
 }
 
 /*
@@ -305,33 +300,53 @@ no-padding-top {
 	Wordpress and foundation both have base classes called sticky so this gives pressedant to wordpress
 --------------------------------------------------------------- */
 .sticky {
-	position: relative;
+  position: relative;
 }
 
 .sticky .featured-title {
-	background: $medium-gray;
-	display: block;
-	color: $white;
+  background: $medium-gray;
+  display: block;
+  color: $white;
 }
 
-[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"], [type="time"], [type="url"], [type="color"], textarea {
-	background: $light-gray;
+[type="text"],
+[type="password"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="week"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="color"],
+textarea {
+  background: $light-gray;
 }
 
 // wordpress controls this in a way it should be hidden
 .featured-title {
-	display: none;
+  display: none;
 }
 
 /*  5 - Fixes - foundation 6 overwrite is written here so foundation can be updated
 -------------------------------------------------------------- */
 
-h1, h2, h3, h4, h5, h6 {
-	text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
 }
 
-.one-point-two-em { // why and where?
-	font-size: 1.2em;
+.one-point-two-em {
+  // why and where?
+  font-size: 1.2em;
 }
 
 /* p {
@@ -352,111 +367,113 @@ h1, h2, h3, h4, h5, h6 {
 	}
 } */
 
-nav, .menu-primary-container, .force-menu-style {
-	// font-weight: bold;
-	font-size: 1.2em;
-	letter-spacing: 0.1rem;
+nav,
+.menu-primary-container,
+.force-menu-style {
+  // font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.1rem;
 
-	@media (min-width: map-get($breakpoints, large)) {
-		font-family: $header-font-family;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    font-family: $header-font-family;
+  }
 }
 
 .menu-primary-container > ul > li {
-	padding: 1rem 0.5rem;
-	// this helps get the border back in line
-	margin-bottom: 2px;
-	margin-top: -2px;
+  padding: 1rem 0.5rem;
+  // this helps get the border back in line
+  margin-bottom: 2px;
+  margin-top: -2px;
 }
 
 .menu-primary-container > ul > li > a {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .menu-primary-container > ul > a,
 .menu-primary-container > ul > li > a {
-	border-bottom: 5px solid $secondary-color; // invisibile until hovered
+  border-bottom: 5px solid $secondary-color; // invisibile until hovered
 }
-
 
 .menu-primary-container > ul > a:hover,
 .menu-primary-container > ul > li > a:hover {
-	color: darken( $white, 10%);
-	background: darken( $secondary-color, 10% );
-	border-bottom: 5px solid darken( $secondary-color, 20% ); // playing around with an additional design style
+  color: darken($white, 10%);
+  background: darken($secondary-color, 10%);
+  border-bottom: 5px solid darken($secondary-color, 20%); // playing around with an additional design style
 }
 
 .menu {
-	justify-content: center;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	position: relative;
-	display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: flex;
 }
 
 .menu a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .menu-primary-container a:hover {
-	background: #006087; // hack I need to make this from a variable
+  background: #006087; // hack I need to make this from a variable
 }
 
 .menu li {
-	padding: $global-padding; // lets start setting a vertical rythm
+  padding: $global-padding; // lets start setting a vertical rythm
 }
 
 /* Fix for automatic last-child float right from foundation */
 .lastchildleft li:last-child {
-	float: left !important;
+  float: left !important;
 }
 
 /* Block grid can also be used */
 .odd-clear li:nth-child(odd) {
-	clear: both;
+  clear: both;
 }
 
 abbr[title] {
-	border-bottom: none;
+  border-bottom: none;
 }
 abbr {
-	font-size: 100%;
-	text-decoration: underline;
+  font-size: 100%;
+  text-decoration: underline;
 }
 
 /*
 	5.2 Images
 ------------------------------------------------ */
 
-.img-100, .img-100 img {
-	width: 100%;
+.img-100,
+.img-100 img {
+  width: 100%;
 }
 
 .img-100-high {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 // sets the height cuts the side
 .img-100-high img {
-	height: 100%;
+  height: 100%;
 }
 
 iframe {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .hero {
-	display: grid;
-	max-width: 89.9em; // stops 3 or more columns
-	margin: $global-margin auto; // center float
-	padding: $global-padding; // small size never get to the edge
-	grid-gap: $global-margin;
+  display: grid;
+  max-width: 89.9em; // stops 3 or more columns
+  margin: $global-margin auto; // center float
+  padding: $global-padding; // small size never get to the edge
+  grid-gap: $global-margin;
 
-	// start doing columns once its bigger - slightly a hack
-	@media (min-width: map-get($breakpoints, medium)) {
-	grid-template-columns: repeat(auto-fill, minmax(30em,1fr));
-	}
+  // start doing columns once its bigger - slightly a hack
+  @media (min-width: map-get($breakpoints, medium)) {
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+  }
 }
 
 /*
@@ -464,22 +481,21 @@ iframe {
 ------------------------------------------------ */
 
 .footer-contact-areas {
-	max-width: 75rem;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	padding: $global-padding;
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: $global-padding;
 }
 
-
 .site {
-	display: grid; // this just for the 100 vh but there might be a smarter way
-	min-height: 100vh;
+  display: grid; // this just for the 100 vh but there might be a smarter way
+  min-height: 100vh;
 }
 
 footer {
-	align-self: end;
-	margin-bottom: 0; // browser reset
+  align-self: end;
+  margin-bottom: 0; // browser reset
 }
 
 /*
@@ -487,203 +503,220 @@ footer {
 ------------------------------------------------ */
 
 .hero-logo {
-	fill: $white;
+  fill: $white;
 }
 
 .hero-logo a {
-	display: block;
-	max-width: 33%;
-	margin: 0 auto;
-	padding-top: $global-padding*2; // start doing more with a type scale and vertical rythm
-	padding-bottom: $global-padding*3;
+  display: block;
+  max-width: 33%;
+  margin: 0 auto;
+  padding-top: $global-padding * 2; // start doing more with a type scale and vertical rythm
+  padding-bottom: $global-padding * 3;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		max-width: 20%;
-	}
+  @media (min-width: map-get($breakpoints, medium)) {
+    max-width: 20%;
+  }
 }
 
-.service-grid { // well that name is now wrong
-	display: grid;
-	// grid-template-columns: 1;
-	// grid-template-rows: 1;
+.service-grid {
+  // well that name is now wrong
+  display: grid;
+  // grid-template-columns: 1;
+  // grid-template-rows: 1;
 }
 
-.service-grid img, .service-grid h4 {
-	grid-column: 1;
-	grid-row: 1;
+.service-grid img,
+.service-grid h4 {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .service-grid-bg {
-	background-color: rgba(10, 127, 189, 0.7); //rgba has alpha so not sure about how to have a variable
-	align-self: end;
+  background-color: rgba(
+    10,
+    127,
+    189,
+    0.7
+  ); //rgba has alpha so not sure about how to have a variable
+  align-self: end;
 }
 
-.inline-block-100w { // hack to make the a all the way across
-	display: inline-block;
-	width: 100%;
+.inline-block-100w {
+  // hack to make the a all the way across
+  display: inline-block;
+  width: 100%;
 }
 
 .service-grid-bg a {
-	color: $white;
+  color: $white;
 }
 
 .service-grid-bg a:hover {
-	color: $light-gray;
+  color: $light-gray;
 }
 
 /*
 	display grids
 ------------------------------------------------ */
 
-.display-grid { //terrible name
-	display: flex;
-	justify-items: center;
+.display-grid {
+  //terrible name
+  display: flex;
+  justify-items: center;
 }
 
-.grid-icon { //terrible names
-	grid-column: 1;
-	align-self: stretch;
+.grid-icon {
+  //terrible names
+  grid-column: 1;
+  align-self: stretch;
 }
 
-.grid-text { //terrible names
-	grid-column: 2;
-	align-self: center;
+.grid-text {
+  //terrible names
+  grid-column: 2;
+  align-self: center;
 }
 
 .footer-icons {
-	/* display: grid;
+  /* display: grid;
 	justify-items: center; // I think this was the whole point but I can probably do it easier with a flex */
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		flex-direction: row;
-	}
+  @media (min-width: map-get($breakpoints, medium)) {
+    flex-direction: row;
+  }
 }
 
-.footer-icon-icon { //terrible names
-	grid-column: 1;
-	grid-row: 1;
-	align-self: center;
+.footer-icon-icon {
+  //terrible names
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
 
-	@media (min-width: map-get($breakpoints, large)) {
-	justify-self: end;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    justify-self: end;
+  }
 }
 
 .footer-icon-icon svg {
-	fill: $primary-color;
+  fill: $primary-color;
 }
 
 .footer-icon-icon svg:hover {
-	fill: $secondary-color;
+  fill: $secondary-color;
 }
 
 .footer-icon-text {
-	grid-column: 1;
-	grid-row: 2;
-	align-self: center;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
 
-	@media (min-width: map-get($breakpoints, large)) {
-	grid-column: 2;
-	grid-row: 1;
-	justify-self: start;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
 }
 
 .post-flex {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	@media (min-width: map-get($breakpoints, large)) {
-	flex-direction: column-reverse;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    flex-direction: column-reverse;
+  }
 }
 
 .crown {
-	display: grid;
-	margin: $global-margin 0;
+  display: grid;
+  margin: $global-margin 0;
 }
 
 .poster-thumbnail {
-	grid-row: 1;
-	grid-column: 1;
-	z-index: -1;
+  grid-row: 1;
+  grid-column: 1;
+  z-index: -1;
 
-	img, video {
-	width: 100%;
-	}
+  img,
+  video {
+    width: 100%;
+  }
 }
 
 .crown-title {
-	grid-row: 1;
-	grid-column: 1;
-	background: rgba(10,127,189,0.7);
-	padding: $global-padding;
-	align-self: end;
-	text-align: center;
-	color: $white;
-	margin-bottom: 6px; // guess and check
+  grid-row: 1;
+  grid-column: 1;
+  background: rgba(10, 127, 189, 0.7);
+  padding: $global-padding;
+  align-self: end;
+  text-align: center;
+  color: $white;
+  margin-bottom: 6px; // guess and check
 }
 
 .poster {
-	display: grid;
-	grid-template-areas:
-	"postcard"
-	"bg"
-	"title"
-	"textual"
-	"gallery";
-	grid-gap: $global-margin;
-	grid-template-columns: 1fr;
+  display: grid;
+  grid-template-areas:
+    "postcard"
+    "bg"
+    "title"
+    "textual"
+    "gallery";
+  grid-gap: $global-margin;
+  grid-template-columns: 1fr;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-	grid-template-areas:
-	"postcard postcard"
-	"gallery  textual"
-	".        textual" // incase the text is longer than the images to stop things getting distored
-	;
+  @media (min-width: map-get($breakpoints, medium)) {
+    grid-template-areas:
+      "postcard postcard"
+      "gallery  textual"
+      ".        textual" // incase the text is longer than the images to stop things getting distored
+;
 
-	grid-template-columns: 1fr 1fr;
-	}
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-
-
-.poster p, .poster ul { // causing issues as the wp-block-gallery is also a ul
-grid-column: 1;
-	@media (min-width: map-get($breakpoints, medium)) {
-		grid-column: 2;
-	}
+.poster p,
+.poster ul {
+  // causing issues as the wp-block-gallery is also a ul
+  grid-column: 1;
+  @media (min-width: map-get($breakpoints, medium)) {
+    grid-column: 2;
+  }
 }
 
 .over-flex {
-	grid-area: postcard;
-	align-self: end;
-	background-color: rgba(10, 127, 189, 0.7); //rgba has alpha so not sure about how to have a variable
-	color: $white;
+  grid-area: postcard;
+  align-self: end;
+  background-color: rgba(
+    10,
+    127,
+    189,
+    0.7
+  ); //rgba has alpha so not sure about how to have a variable
+  color: $white;
 }
 
 .poster-text {
-	grid-area: textual;
+  grid-area: textual;
 }
 
 .poster .wp-block-gallery {
-	// grid-area: gallery;
-	margin-left: 0;
+  // grid-area: gallery;
+  margin-left: 0;
 }
-
 
 // home page animation
 .cfimg {
-	display: grid;
-	justify-items: stretch;
-	align-items: stretch;
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
 }
 .cfimg picture {
-	grid-column: 1;
-	grid-row: 1;
-	/* animation-name: FadeInOut;
+  grid-column: 1;
+  grid-row: 1;
+  /* animation-name: FadeInOut;
 	animation-duration: 16s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite; */
@@ -726,7 +759,7 @@ grid-column: 1;
 --------------------------------------------------------------*/
 
 .off-canvas a {
-	color: $black;
+  color: $black;
 }
 
 /*
@@ -735,50 +768,50 @@ grid-column: 1;
 ------------------------------------------------------------- */
 
 .wp-caption {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .wp-caption-text {
-	margin-top: $global-margin;
-	font-style: italic;
+  margin-top: $global-margin;
+  font-style: italic;
 }
 
 .screen-reader-text {
-	position: static !important;
+  position: static !important;
 }
 
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute !important;
-	width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
 }
 
 .screen-reader-text {
-	position: absolute !important;
+  position: absolute !important;
 }
 
 .gallery-caption {
-	font-style: italic;
+  font-style: italic;
 }
 
 img .alignleft {
-	padding-right: $global-padding;
+  padding-right: $global-padding;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin: 0 auto;
+  clear: both;
+  display: block;
+  margin: 0 auto;
 }
 
 .alignright {
-	float: right;
+  float: right;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 /**
@@ -786,257 +819,262 @@ img .alignleft {
  */
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	padding: $global-padding;
-	width: 100%;
-	vertical-align: bottom;
+  display: inline-block;
+  text-align: center;
+  padding: $global-padding;
+  width: 100%;
+  vertical-align: bottom;
 }
 
 /* Small Up screens */
 // this is not how I work on these anymore it should be updated
-@media only screen and (max-width: 40em) { /* min-width 1025px, large screens */
+@media only screen and (max-width: 40em) {
+  /* min-width 1025px, large screens */
 
-	.gallery-columns-2 .gallery-item, .gallery-columns-3 .gallery-item, .gallery-columns-4 .gallery-item, .gallery-columns-5 .gallery-item, .gallery-columns-6 .gallery-item, .gallery-columns-7 .gallery-item, .gallery-columns-8 .gallery-item, .gallery-columns-9 .gallery-item {
-	max-width: 100%;
-	}
+  .gallery-columns-2 .gallery-item,
+  .gallery-columns-3 .gallery-item,
+  .gallery-columns-4 .gallery-item,
+  .gallery-columns-5 .gallery-item,
+  .gallery-columns-6 .gallery-item,
+  .gallery-columns-7 .gallery-item,
+  .gallery-columns-8 .gallery-item,
+  .gallery-columns-9 .gallery-item {
+    max-width: 100%;
+  }
 }
 
 /* Medium Up screens */
-@media only screen and (min-width: 40.063em) { /* min-width 1025px, large screens */
+@media only screen and (min-width: 40.063em) {
+  /* min-width 1025px, large screens */
 
-	.gallery-columns-2 .gallery-item, .gallery-columns-3 .gallery-item, .gallery-columns-4 .gallery-item, .gallery-columns-5 .gallery-item, .gallery-columns-6 .gallery-item, .gallery-columns-7 .gallery-item, .gallery-columns-8 .gallery-item, .gallery-columns-9 .gallery-item {
-	max-width: 50%;
-	}
+  .gallery-columns-2 .gallery-item,
+  .gallery-columns-3 .gallery-item,
+  .gallery-columns-4 .gallery-item,
+  .gallery-columns-5 .gallery-item,
+  .gallery-columns-6 .gallery-item,
+  .gallery-columns-7 .gallery-item,
+  .gallery-columns-8 .gallery-item,
+  .gallery-columns-9 .gallery-item {
+    max-width: 50%;
+  }
 }
 
 /* Large Up screens */
-@media only screen and (min-width: 64.063em) { /* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) {
+  /* min-width 1025px, large screens */
 
-	.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-	}
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%;
+  }
 
-	.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-	}
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+  }
 
-	.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-	}
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%;
+  }
 
-	.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-	}
+  .gallery-columns-5 .gallery-item {
+    max-width: 20%;
+  }
 
-	.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-	}
+  .gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+  }
 
-	.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-	}
+  .gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+  }
 
-	.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-	}
+  .gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+  }
 
-	.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-	}
+  .gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+  }
 }
 
 .gallery-icon img {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .gallery-caption {
-	color: $medium-gray;
-	display: block;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-style: italic;
-	line-height: 1.6153846154;
-	padding-top: 0.5384615385em;
+  color: $medium-gray;
+  display: block;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic;
+  line-height: 1.6153846154;
+  padding-top: 0.5384615385em;
 }
 
 .gallery-columns-6 .gallery-caption,
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
-	display: none;
+  display: none;
 }
 
-
-
 .button {
-	display: inline-block;
-	padding: 0.85em 1em;
+  display: inline-block;
+  padding: 0.85em 1em;
 }
 
 .button.hollow {
-	font-weight: bold;
-	background-color: transparent;
-	border: 2px solid $primary-color;
-	color: $primary-color;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
 }
 
 .fake-a {
-	color: $white;
+  color: $white;
 }
 
-
-
-
 #header-contact-background {
-	background: $light-gray;
-	margin-bottom: $global-margin*2;
-	padding: $global-padding*2 $global-padding 0 $global-padding; // no bottom due to the contact boxes changing alignment is easier to have the bottom margin there
+  background: $light-gray;
+  margin-bottom: $global-margin * 2;
+  padding: $global-padding * 2 $global-padding 0 $global-padding; // no bottom due to the contact boxes changing alignment is easier to have the bottom margin there
 }
 
 .header-contact {
-	max-width: 89.9em;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
+  max-width: 89.9em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
-	h3 {
-		margin-bottom: $global-margin*2;
-	}
+  h3 {
+    margin-bottom: $global-margin * 2;
+  }
 
-	@media (min-width: map-get($breakpoints, large)) {
-		flex-direction: row;
+  @media (min-width: map-get($breakpoints, large)) {
+    flex-direction: row;
 
-		h3 { // once its in the row its a little different on the layout
-			margin-bottom: 0;
-			padding-right: $global-padding; // this is possibly causing the columns to be different sizes
-		}
-	}
+    h3 {
+      // once its in the row its a little different on the layout
+      margin-bottom: 0;
+      padding-right: $global-padding; // this is possibly causing the columns to be different sizes
+    }
+  }
 }
 
 .together {
-	display: inline-block;
-	width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 #header-contact--phone,
 #header-contact--place {
-	margin-bottom: $global-margin*2;
+  margin-bottom: $global-margin * 2;
 }
 
-
-
-
-
-
-
 .grab {
-	grid-column: 1;
-	grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-	grid-column: 2;
-	grid-row: 1;
-	}
+  @media (min-width: map-get($breakpoints, medium)) {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 .wp-block-gallery {
-	grid-column: 1;
-	grid-row: 2;
+  grid-column: 1;
+  grid-row: 2;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		grid-column: 1 !important; // trying to keep this inline but also control the ul for other lists
-		grid-row: 1;
-	}
+  @media (min-width: map-get($breakpoints, medium)) {
+    grid-column: 1 !important; // trying to keep this inline but also control the ul for other lists
+    grid-row: 1;
+  }
 }
-
 
 // test
 .is-style-box-title {
-	color: burlywood;
+  color: burlywood;
 }
 // end of test
 
 // gutenbery slider
 .is-style-slider-gallery ul {
-	display: grid;
-	justify-items: stretch;
-	align-items: stretch;
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
 
-	li {
-		grid-row: 1;
-		grid-column: 1;
-		animation-name: FadeInOut;
-		animation-duration: 16s;
-		animation-timing-function: ease-in-out;
-		animation-iteration-count: infinite;
-	}
+  li {
+    grid-row: 1;
+    grid-column: 1;
+    animation-name: FadeInOut;
+    animation-duration: 16s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
 }
 
 /* Just do the link I dont understand the math */
 @keyframes FadeInOut {
-	0% {
-	opacity:1;
-	}
-	18.75% {
-	opacity:1;
-	}
-	25% {
-	opacity:0;
-	}
-	93.75% {
-	opacity:0;
-	}
-	100% {
-	opacity:1;
-	}
+  0% {
+    opacity: 1;
+  }
+  18.75% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  93.75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .is-style-slider-gallery ul li:nth-of-type(1) {
-	animation-delay: 12s;
+  animation-delay: 12s;
 }
 .is-style-slider-gallery ul li:nth-of-type(2) {
-	animation-delay: 8s;
+  animation-delay: 8s;
 }
 .is-style-slider-gallery ul li:nth-of-type(3) {
-	animation-delay: 4s;
+  animation-delay: 4s;
 }
 .is-style-slider-gallery ul li:nth-of-type(4) {
-	animation-delay: 0;
+  animation-delay: 0;
 }
-
-
-
 
 .is-style-featured-media-text {
-	background: $light-gray;
-	margin-bottom: $global-margin*2;
-	grid-template-columns: 1fr !important;
+  background: $light-gray;
+  margin-bottom: $global-margin * 2;
+  grid-template-columns: 1fr !important;
 
-	> div {
-		padding: 0 !important; // overwrite .wp-block-media-text .wp-block-media-text__content
-		grid-row: 2 !important;
-		grid-column: 1 !important;
-	}
+  > div {
+    padding: 0 !important; // overwrite .wp-block-media-text .wp-block-media-text__content
+    grid-row: 2 !important;
+    grid-column: 1 !important;
+  }
 
-	h4 {
-		padding: $global-padding;
-		padding-left: $global-padding*2;
-		background-color: rgba(10, 127, 189, 0.7); //rgba has alpha so not sure about how to have a variable
-		a {
-			color: white; // remove this as its a link but testing
-		}
-	}
+  h4 {
+    padding: $global-padding;
+    padding-left: $global-padding * 2;
+    background-color: rgba(
+      10,
+      127,
+      189,
+      0.7
+    ); //rgba has alpha so not sure about how to have a variable
+    a {
+      color: white; // remove this as its a link but testing
+    }
+  }
 
-	p {
-		// padding: $global-padding;
-		padding-left: $global-padding*2;
-		padding-right: $global-padding;
-	}
-	
-	
+  p {
+    // padding: $global-padding;
+    padding-left: $global-padding * 2;
+    padding-right: $global-padding;
+  }
 }
-
 
 /*
 .service-grid { // well that name is now wrong
@@ -1070,162 +1108,174 @@ img .alignleft {
 */
 
 .page-template-page-swiss article {
-	max-width: 75rem;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: $global-padding;
-	padding-right: $global-padding;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
 
-	video {
-		max-width: 100%;
-		margin-bottom: $global-margin*3;
-	}
+  video {
+    max-width: 100%;
+    margin-bottom: $global-margin * 3;
+  }
 
-	.attachment-post-thumbnail {
-		margin-bottom: $global-margin*2;
-	}
+  .attachment-post-thumbnail {
+    margin-bottom: $global-margin * 2;
+  }
 
-	/*
+  /*
 	.wp-block-column:not(:first-child) { this throws some design erros on small devices
 		// margin-left: $global-margin*2 !important; // overwrite default I would like to get down to as few important as possible I just need to work on the specificity
 	}
 	*/
 
-	.wp-block-media-text {
+  .wp-block-media-text {
+    .wp-block-media-text__content {
+      padding: 0 !important;
+    }
 
-		.wp-block-media-text__content {
-			padding: 0 !important;
-		}
-
-		@media (min-width: 600px) {
-			grid-template-columns: 1fr 1fr !important; // needs to be after a media query
-			grid-gap: $global-margin*2;
-			margin-bottom: $global-margin;
-		}
-	}
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr !important; // needs to be after a media query
+      grid-gap: $global-margin * 2;
+      margin-bottom: $global-margin;
+    }
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .is-style-swiss-separator:before {
-	border-style: solid;
-	border-color: $light-gray;
-	border-bottom-width: $global-padding/2;
-	content: '';
-	width: calc(100% - 1em);
-	// display: inline-block;
-	margin: 0;
-	padding: 0;
-	float: left;
+  border-style: solid;
+  border-color: $light-gray;
+  border-bottom-width: $global-padding/2;
+  content: "";
+  width: calc(100% - 1em);
+  // display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: left;
 
-	@media (min-width: 600px) {
-		width: calc(50% - 1em);
-	}
+  @media (min-width: 600px) {
+    width: calc(50% - 1em);
+  }
 }
 
 .is-style-swiss-separator {
-	margin: 0;
-	// display: flow-root; // doesnt work on ios
-	display: flex;
-	height: $global-padding/2;
-	margin-bottom: $global-margin;
-	border: none; // remove the original
+  margin: 0;
+  // display: flow-root; // doesnt work on ios
+  display: flex;
+  height: $global-padding/2;
+  margin-bottom: $global-margin;
+  border: none; // remove the original
 }
 
 .is-style-swiss-separator:after {
-
-	@media (min-width: 600px) {
-		width: calc(50% - 1em);
-		content: '';
-		border-style: solid;
-		border-color: $light-gray;
-		border-bottom-width: $global-padding/2;
-		margin: 0;
-		padding: 0;
-		float: right;
-		margin-left: $global-margin*2;
-	}
+  @media (min-width: 600px) {
+    width: calc(50% - 1em);
+    content: "";
+    border-style: solid;
+    border-color: $light-gray;
+    border-bottom-width: $global-padding/2;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-left: $global-margin * 2;
+  }
 }
 
 .grid-container {
-	padding-left: $global-padding;
-	padding-right: $global-padding;
-	max-width: 75rem;
-	margin-left: auto;
-	margin-right: auto;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service {
-	max-width: 75rem;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		flex-direction: row;
-	}
+  @media (min-width: map-get($breakpoints, medium)) {
+    flex-direction: row;
+  }
 }
 
 .service > div {
-	flex: 1;
-	margin: $global-padding;
+  flex: 1;
+  margin: $global-padding;
 }
 
 .grid-x {
-	display: flex;
+  display: flex;
 }
 
 .grid-x > .large-6 {
-	width: 50%;
+  width: 50%;
 }
 
 .grid-padding-x > .cell {
-	padding-left: $global-padding;
-	padding-right: $global-padding;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
 }
 
 .hide-for-large {
-	@media (min-width: map-get($breakpoints, large)) {
-		display: none !important;
-	}
+  @media (min-width: map-get($breakpoints, large)) {
+    display: none !important;
+  }
 }
 
 .show-for-large {
-	display: none;
-	@media (min-width: map-get($breakpoints, large)) {
-		display: block; // not sure if this is exactly right
-	}
+  display: none;
+  @media (min-width: map-get($breakpoints, large)) {
+    display: block; // not sure if this is exactly right
+  }
 }
 
 .footer-extra {
-	display: block;
-	margin-top: 0;
-}
-
-.swiss {
-	margin-bottom: 1rem;
-	border: 0.5rem solid #e6e6e6;
+  display: block;
+  margin-top: 0;
 }
 
 .wp-block-colum {
-	flex-basis: calc(50% - 16px);
-	flex-grow: 0;
+  flex-basis: calc(50% - 16px);
+  flex-grow: 0;
 }
 
 .copyright {
-	float: left; // needed to have the p margin inside of this
-	width: 100%;
-	padding-top: 1rem;
+  float: left; // needed to have the p margin inside of this
+  width: 100%;
+  padding-top: 1rem;
+}
+
+
+// this is needed for the hr
+// there might be a better way to do that
+.tasks__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: $breakpoint__full;
+  margin: 0 auto;
+}
+
+.tasks {
+  display: grid;
+  // overlays so it has to be a grid
+  margin-bottom: $global-margin * 2;
+  max-width: 70rem; // double measure enough space for the margins
+  margin: 0 auto;
+  margin-bottom: 2rem;
+
+  // grid-template-columns:
+  // I presume this is running on default because it's nice and simple
+
+  @media (min-width: $breakpoint__medium) {
+    grid-template-columns: 1fr 2em 1fr 2em 1fr;
+  }
+
+  // this is getting really complicated should it start being named and changed?
+  @media (min-width: $breakpoint__medium--half-step) {
+    grid-template-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
+  }
 }

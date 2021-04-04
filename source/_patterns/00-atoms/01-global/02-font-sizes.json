@@ -1,42 +1,42 @@
 {
   "items": [
     {
-      "name": "$font-size-sm",
-      "value": "0.75rem",
-      "comment": ""
+      "name": "h1",
+      "value": "2.488em",
+      "comment": "39.808px"
     },
     {
-      "name": "$font-size-sm-2",
-      "value": "0.85rem",
-      "comment": ""
+      "name": "h2",
+      "value": "2.074em",
+      "comment": "33.184px"
     },
     {
-      "name": "$font-size-med",
-      "value": "1rem",
-      "comment": ""
+      "name": "h3",
+      "value": "1.728em",
+      "comment": "27.684px"
     },
     {
-      "name": "$font-size-med-2",
+      "name": "h4",
+      "value": "1.44em",
+      "comment": "23.04px"
+    },
+    {
+      "name": "h5,",
       "value": "1.2rem",
-      "comment": ""
+      "comment": "19.2px"
     },
     {
-      "name": "$font-size-large",
-      "value": "2rem",
-      "comment": ""
+      "name": "h6,",
+      "value": "1rem",
+      "comment": "16px"
     },
     {
-      "name": "$font-size-xl",
-      "value": "3rem",
-      "comment": ""
-    },
-    {
-      "name": "$font-size-xxl",
-      "value": "4rem",
-      "comment": ""
+      "name": "small, .text-small",
+      "value": "0.833em",
+      "comment": "13.328px"
     }
   ],
   "meta": {
-    "description": "To add to these items, use Sass variables that start with <code>$font-size-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    "description": "I don't think this is right anymore // I want a nice sizing naming structure // To add to these items, use Sass variables that start with <code>$font-size-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
   }
 }

@@ -41,42 +41,106 @@
  * Brand Colors
  * 1) Brand=specific colors
  */
-$color-brand-blue: #1e93bd;;
-$color-brand-blue-dark: #006087;
-$color-brand-orange: #ba6333;
+$primary-color: #1e93bd;
+$secondary-color: #006087;
 
 /**
  * Neutral Colors
  * 1) Neutral colors are grayscale values used throughout the UI
  */
-$color-neutral-white: #fff;
-$color-neutral-gray-02: #f9f9f9;
-$color-neutral-gray-07: #eee;
-$color-neutral-gray-13: #ddd;
-$color-neutral-gray-27: #bbb;
-$color-neutral-gray-50: #808080;
-$color-neutral-gray-60: #666;
-$color-neutral-gray-73: #444;
-$color-neutral-gray-93: #131313;
-$color-neutral-black: #000;
+ $black: #0a0a0a; // rgb 10
+ $white: #fefefe; // rgb 254
+ $light-gray: #e6e6e6; // rgb 230
+ $medium-gray: #cacaca; // rgb 202
+ $dark-gray: #8a8a8a; // rgb 138
 
 /**
  * Utility Colors
  * 1) Utility colors are colors used to provide feedback, such as alert messages,
  *    form validation, etc.
  */
-$color-utility-info: #0192d0;
-$color-utility-info-light: #d3f2ff;
-$color-utility-error: #b12a0b;
-$color-utility-error-light: #fdded8;
-$color-utility-success: #03804d;
-$color-utility-success-light: #d4f3e6;
-$color-utility-warning: #a59b15;
-$color-utility-warning-light: #fffecf;
 
+/* Contrast Checks
+* almost everything should be above 4.5 for used above each other
+* links have to be 3:1 how does that stack up for minimal step?
 
+/ * $white background
+* $black text 19.63
+* $dark-gray 3.42 - 🚨 fails
+* $primary-color 3.49 🚨
+* $secondary-color - 6.88
+* #333 - 12.52 used other places
 
+/ * $black background - this fares far better than current light
+* $white text 19.63
+* $light-gray 15.86
+* $medium-gray 12.07
+* $dark-gray 5.73 - 📣 visually this isn't great but it passes
+* $primary-color 5.62 - 📣 not great visually
+* $secondary-color 2.84 🚨 fails as it should
 
+/* $primary-background // this is pretty good across the board
+* $white 3.49 🚨
+* $black 5.62
+* $light-gray 15.86
+* $medium-gray 12.07
+* $dark-gray 5.73
+
+/* $secondary-background
+* $white 6.88
+* $black 2.84 🚨
+* $light-gray 5.56
+* $medium-gray 4.23 🚨
+* $dark-gray 2.0 🚨
+
+// I need to think about what I'm worried about with text
+// some of these are enough to see as long as they don't have a11y useage
+* $white / $light-gray 1.23 🚨
+* $white / $medium-gray 1.62 🚨
+* $white / $dark-gray 3.42 // passes the 3 stop change
+
+* $primary-color / $secondary-color 1.97
+// I probably need something here that's on the color spectrum
+// to be above 3 when dark it's pretty close to black #003E57 or near to that 1.72 from black
+// lightness above 3 is very close to white #DBF5FF
+
+// I think I need
+// a white and light background I can run
+- black - primary font
+- dark - secondary font (lighter)
+- primary - link
+- secondary - hover (darker)
+
+// a primary and secondary background I can run
+- white - primary
+- light - secondary
+- how am I doing links here?
+// I've looked into other colors at times but never been approved
+// in light mode links should go darker // in dark mode links go lighter
+// we cant have a deep enough blue to have to have normal primary as a link
+
+/* here is what I need to test
+// we might be able to have a pretty light blue that goes dark and still hits the 4.5.
+// dark mode it would be a very dark blue on the blue so it's almost black and then get's lighter?
+// I just don't think I can get the color to link 3.0 with the 4.5 that's just too tight a needle to thread.
+
+// with this still a blue link on blue maybe I have to do something differnt with the text color
+// I think that should always be monochromatic tho so I don't have many options.
+
+// a flip for dark mode of secondary and primary
+// a black and dark I can run
+- white - primary
+- light - secondary (darker)
+- primary - link
+- secondary - hover (lighter)
+
+// so far I have no specific use of medium it's a nice to have but I should know where it can go
+// how often am I using a third in just text color or is it design elements like borders etc
+
+// colors come in triples with a base and a hover state darker for light mode, lighter for dark mode.
+// this is kinda what I was doing with a darken 10% but that was also messy and guess and check in lots of places
+// this way I am confirming contrast ratios etc
+*/
 
 /*------------------------------------*\
     #TYPOGRAPHY
@@ -85,33 +149,16 @@ $color-utility-warning-light: #fffecf;
 /**
  * Font Family
  */
-$font-family-primary: 'Raleway', "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-$font-family-secondary: 'Abel', serif;
-
+ $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+ $major-font-family: "Roboto Slab", serif; // rename this it's also nav and buttons etc 
 
 /**
  * Font Sizing
  */
-$font-size-sm: 0.75rem;
-$font-size-sm-2: 0.85rem;
-$font-size-med: 1rem;
-$font-size-med-2: 1.2rem;
-$font-size-large: 2rem;
-$font-size-xl: 3rem;
-$font-size-xxl: 4rem;
 
 /**
  * Line Height
  */
-$line-height-sm: 0.8;
-$line-height-sm-2: 0.9;
-$line-height-med: 1;
-$line-height-med-2: 1.2;
-$line-height-large: 1.6;
-$line-height-xl: 1.8;
-
-
-
 
 
 /*------------------------------------*\
@@ -121,13 +168,8 @@ $line-height-xl: 1.8;
 /**
  * Max Width
  */
-$l-max-width: 80rem !default;
-$l-max-width-narrow: 45rem !default;
-$l-linelength-width: 36rem !default;
-
-
-
-
+$page-width: 77em; // this should probably meet up with breakpoints
+$general-measure: 30rem; // document this somewhere
 
 /*------------------------------------*\
     #SPACING
@@ -137,14 +179,9 @@ $l-linelength-width: 36rem !default;
  * Spacing and offsets
  * 1) Used to space grids and body padding
  */
-
-$spacing: 1rem;
-$spacing-small: round(0.5 * $spacing);
-$spacing-large: round(2 * $spacing);
-
-
-
-
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-grid-gap: $global-margin;
 
 /*------------------------------------*\
     #BORDERS
@@ -153,16 +190,12 @@ $spacing-large: round(2 * $spacing);
 /**
  * Border
  */
- $border-thickness: 1px;
+//  $border-thickness: 1px;
 
 /**
  * Border radius
  */
-$border-radius: 4px;
-
-
-
-
+// $border-radius: 4px;
 
 /*------------------------------------*\
     #ANIMATION
@@ -171,13 +204,10 @@ $border-radius: 4px;
 /**
  * Transition Speed
  */
-$anim-fade-quick: 0.15s;
-$anim-fade-long: 0.5s;
 
 /**
  * Transition Ease
  */
-$anim-ease: ease-out;
 
 
 
@@ -186,13 +216,11 @@ $anim-ease: ease-out;
 /*------------------------------------*\
     #BREAKPOINTS
 \*------------------------------------*/
-
-/**
- * Breakpoints used in media queries
- * 1) These are not the only breakpoints used, but they provide a few defaults
- */
-$bp-small: 28em;
-$bp-small-2: 35em;
-$bp-med: 47em;
-$bp-large: 60em;
-$bp-xl: 70em;
+ $breakpoint__small: 0; // document this?
+ $breakpoint__medium: 40em; // 640px
+ $breakpoint__medium--half-step: 54em; // 864px minor change
+ $breakpoint__large: 90em; // 1440px // Im getting the feeling this is too small
+ $breakpoint__large--half-step: 120em; // 1920px minor change
+ $breakpoint__full: 144em; // 2304px // this could just be large__half-step
+ // for the px surely I need the body size above?
+ // include something about measure in here

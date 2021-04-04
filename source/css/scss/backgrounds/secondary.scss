@@ -1,0 +1,10 @@
+.bg-secondary {
+    background: $secondary-color;
+  
+    a {
+      color: $white;
+    }
+    a:hover {
+      color: $light-gray;
+    }
+  }

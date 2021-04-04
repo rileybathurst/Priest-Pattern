@@ -1,0 +1,11 @@
+.bg-dark-gray {
+  background: $dark-gray;
+
+  a {
+    color: $white;
+  }
+
+  a:hover {
+    color: $light-gray;
+  }
+}

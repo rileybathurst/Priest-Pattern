@@ -1,0 +1,19 @@
+.bg-black {
+  background: $black;
+  color: $white;
+
+    // I think this is the currently the same as regular so it's not needed
+    a {
+        color:$primary-color;
+        // 📣 document the contrast ratio
+    }
+
+    a:hover {
+        // color: ;
+        text-decoration: underline;
+    }
+
+  .hidden-link {
+    color: $white;
+  }
+}
