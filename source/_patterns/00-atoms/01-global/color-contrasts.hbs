@@ -20,7 +20,6 @@ Perfers Color Scheme Light
 <small>{{{ meta.description }}}</small>
 
 Perfers Color Scheme Dark
-{{!-- too big but thats later --}}
 <ul class="sg-colors sg-colors__prefers-dark" style="background-color: #0a0a0a; border-radius: 8px;">
     {{# items }}
         <li>
@@ -41,6 +40,48 @@ Perfers Color Scheme Dark
     {{/ items }}
 </ul>
 <small>{{{ meta.description }}}</small>
+
+Primary background
+<ul class="sg-colors sg-colors__prefers-dark" style="background-color: #1e93bd; border-radius: 8px;">
+    {{# items }}
+        <li>
+            <span class="sg-swatch" style="background: {{ value }}; clip-path: polygon(0 0, 100% 0, 0 100%);"></span>
+            {{!-- clip-path: polygon(0 0, 100% 0, 0 100%); --}}
+            <span class="sg-label" style="color: #fefefe;">
+                {{!-- style="color: #fefefe;" --}}
+                {{ name }}
+                <br />Hex {{ value }}
+                <br />Contrast {{ contrast-primary }}
+                <br />Normal Text AA {{ primary-normal-AA }}
+                <br />Normal Text AAA {{ primary-normal-AAA }}
+                <br />Large Text AA {{ primary-large-AA }}
+                <br />Large Text AAA {{ primary-large-AAA }}
+                <br />UI {{ primary-UI }}
+            </span>
+        </li>
+    {{/ items }}
+</ul>
+
+Secondary background
+<ul class="sg-colors sg-colors__prefers-dark" style="background-color: #006087; border-radius: 8px;">
+    {{# items }}
+        <li>
+            <span class="sg-swatch" style="background: {{ value }}; clip-path: polygon(0 0, 100% 0, 0 100%);"></span>
+            {{!-- clip-path: polygon(0 0, 100% 0, 0 100%); --}}
+            <span class="sg-label" style="color: #fefefe;">
+                {{!-- style="color: #fefefe;" --}}
+                {{ name }}
+                <br />Hex {{ value }}
+                <br />Contrast {{ contrast-secondary }}
+                <br />Normal Text AA {{ secondary-normal-AA }}
+                <br />Normal Text AAA {{ secondary-normal-AAA }}
+                <br />Large Text AA {{ secondary-large-AA }}
+                <br />Large Text AAA {{ secondary-large-AAA }}
+                <br />UI {{ secondary-UI }}
+            </span>
+        </li>
+    {{/ items }}
+</ul>
 
 {{!-- 
 This would be 100x nicer if it was styled or automatic but this is base level

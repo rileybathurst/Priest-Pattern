@@ -14,7 +14,19 @@
         "dark-normal-AAA": "fail",
         "dark-large-AA": "pass",
         "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "dark-UI": "pass",
+        "contrast-primary": "0",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "fail",
+        "primary-large-AAA": "fail",
+        "primary-UI": "fail",
+        "contrast-secondary": "1.97",
+        "secondary-normal-AA": "fail",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "fail",
+        "secondary-large-AAA": "fail",
+        "secondary-UI": "fail"
       },
       {
         "name": "secondary-color",
@@ -30,7 +42,19 @@
         "dark-normal-AAA": "fail",
         "dark-large-AA": "fail",
         "dark-large-AAA": "fail",
-        "dark-UI": "fail"
+        "dark-UI": "fail",
+        "contrast-primary": "1.97",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "fail",
+        "primary-large-AAA": "fail",
+        "primary-UI": "fail",
+        "contrast-secondary": "0",
+        "secondary-normal-AA": "fail",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "fail",
+        "secondary-large-AAA": "fail",
+        "secondary-UI": "fail"
       },
       {
         "name": "white",
@@ -46,7 +70,19 @@
         "dark-normal-AAA": "pass",
         "dark-large-AA": "pass",
         "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "dark-UI": "pass",
+        "contrast-primary": "3.49",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "pass",
+        "primary-large-AAA": "fail",
+        "primary-UI": "pass",
+        "contrast-secondary": "6.88",
+        "secondary-normal-AA": "pass",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "pass",
+        "secondary-large-AAA": "pass",
+        "secondary-UI": "pass"
       },
       {
         "name": "light-gray",
@@ -62,7 +98,19 @@
         "dark-normal-AAA": "pass",
         "dark-large-AA": "pass",
         "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "dark-UI": "pass",
+        "contrast-primary": "2.82",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "fail",
+        "primary-large-AAA": "fail",
+        "primary-UI": "fail",
+        "contrast-secondary": "5.56",
+        "secondary-normal-AA": "pass",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "pass",
+        "secondary-large-AAA": "pass",
+        "secondary-UI": "pass"
       },
       {
         "name": "medium-gray",
@@ -78,7 +126,19 @@
         "dark-normal-AAA": "pass",
         "dark-large-AA": "pass",
         "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "dark-UI": "pass",
+        "contrast-primary": "2.14",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "fail",
+        "primary-large-AAA": "fail",
+        "primary-UI": "fail",
+        "contrast-secondary": "4.23",
+        "secondary-normal-AA": "fail",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "pass",
+        "secondary-large-AAA": "fail",
+        "secondary-UI": "pass"
       },
       {
         "name": "dark-gray",
@@ -94,7 +154,19 @@
         "dark-normal-AAA": "fail",
         "dark-large-AA": "pass",
         "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "dark-UI": "pass",
+        "contrast-primary": "1.02",
+        "primary-normal-AA": "fail",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "fail",
+        "primary-large-AAA": "fail",
+        "primary-UI": "fail",
+        "contrast-secondary": "2.01",
+        "secondary-normal-AA": "fail",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "fail",
+        "secondary-large-AAA": "fail",
+        "secondary-UI": "fail"
       },
       {
         "name": "black",
@@ -110,7 +182,19 @@
         "dark-normal-AAA": "fail",
         "dark-large-AA": "fail",
         "dark-large-AAA": "fail",
-        "dark-UI": "fail"
+        "dark-UI": "fail",
+        "contrast-primary": "5.62",
+        "primary-normal-AA": "pass",
+        "primary-normal-AAA": "fail",
+        "primary-large-AA": "pass",
+        "primary-large-AAA": "pass",
+        "primary-UI": "pass",
+        "contrast-secondary": "2.84",
+        "secondary-normal-AA": "fail",
+        "secondary-normal-AAA": "fail",
+        "secondary-large-AA": "fail",
+        "secondary-large-AAA": "fail",
+        "secondary-UI": "fail"
       }
     ],
     "meta": {
