@@ -99,18 +99,18 @@
       {
         "name": "black",
         "value": "#0a0a0a",
-        "contrast-light": "0",
-        "light-normal-AA": "fail",
-        "light-normal-AAA": "fail",
-        "light-large-AA": "fail",
-        "light-large-AAA": "fail",
-        "light-UI": "fail",
-        "contrast-dark": "19.63",
-        "dark-normal-AA": "pass",
-        "dark-normal-AAA": "pass",
-        "dark-large-AA": "pass",
-        "dark-large-AAA": "pass",
-        "dark-UI": "pass"
+        "contrast-light": "19.63",
+        "light-normal-AA": "pass",
+        "light-normal-AAA": "pass",
+        "light-large-AA": "pass",
+        "light-large-AAA": "pass",
+        "light-UI": "pass",
+        "contrast-dark": "0",
+        "dark-normal-AA": "fail",
+        "dark-normal-AAA": "fail",
+        "dark-large-AA": "fail",
+        "dark-large-AAA": "fail",
+        "dark-UI": "fail"
       }
     ],
     "meta": {
