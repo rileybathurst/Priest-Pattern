@@ -137,6 +137,10 @@
 
 // so far I have no specific use of medium it's a nice to have but I should know where it can go
 // how often am I using a third in just text color or is it design elements like borders etc
+
+// colors come in triples with a base and a hover state darker for light mode, lighter for dark mode.
+// this is kinda what I was doing with a darken 10% but that was also messy and guess and check in lots of places
+// this way I am confirming contrast ratios etc
 */
 /*------------------------------------*\
     #TYPOGRAPHY
@@ -206,6 +210,11 @@
 /*------------------------------------*\
     #FORMS
 \*------------------------------------*/
+.sg-colors__prefers-dark {
+  background-color: #0a0a0a;
+  border-radius: 8px;
+}
+
 html {
   font-size: 100%;
 }
