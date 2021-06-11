@@ -7,15 +7,24 @@
  * and define them against variables that we can utilise anywhere throughout the project.
  */
 
- $primary-color: #1e93bd;
- $secondary-color: #006087;
- $warning-color: #ffae00;
- 
- $black: #0a0a0a;
- $white: #fefefe;
- $light-gray: #e6e6e6;
- $medium-gray: #cacaca;
- $dark-gray: #8a8a8a;
+$primary-color: #1e93bd;
+$secondary-color: #006087;
+
+:root {
+  --primary-color-b: 195.8, 72.6%;
+  --primary-color-l: 42.9%;
+  --primary-color: hsl(var(--primary-color-b), var(--primary-color-l));
+
+  --secondary-color-b: 197.3, 100%;
+  --secondary-color-l: 26.5%;
+  --secondary-color: hsl(var(--primary-color-b), var(--primary-color-l));
+}
+
+$black: #0a0a0a;
+$white: #fefefe;
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
 
 
 
@@ -35,8 +44,7 @@
     #FORMS
 \*------------------------------------*/
 
-
-.sg-colors__prefers-dark {
+/* .sg-colors__prefers-dark {
     background-color: #0a0a0a;
     border-radius: 8px;
-}
+} */

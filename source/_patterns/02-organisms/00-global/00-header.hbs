@@ -1,6 +1,15 @@
 <header>
-    <div>{{! is this really here? --}}
+    <div class="bg-primary hero-logo">{{! is this really here? --}}
         {{> molecules-logo }}
-        {{> molecules-primary-nav }}
+    </div>
+
+    {{> molecules-primary-nav }}
+
+    <div id="menu_toggle" class="bg-secondary shadow-darker text-center">
+        {{> molecules-small-menu }}
+    </div>
+
+    <div class="bg-secondary shadow">
+        {{> molecules-big-menu }}
     </div>
 </header>

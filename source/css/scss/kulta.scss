@@ -402,27 +402,6 @@ nav,
   border-bottom: 5px solid darken($secondary-color, 20%); // playing around with an additional design style
 }
 
-.menu {
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative;
-  display: flex;
-}
-
-.menu a {
-  text-decoration: none;
-}
-
-.menu-primary-container a:hover {
-  background: #006087; // hack I need to make this from a variable
-}
-
-.menu li {
-  padding: $global-padding; // lets start setting a vertical rythm
-}
-
 /* Fix for automatic last-child float right from foundation */
 .lastchildleft li:last-child {
   float: left !important;
@@ -915,11 +894,6 @@ img .alignleft {
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
   display: none;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.85em 1em;
 }
 
 .button.hollow {

@@ -7,5 +7,48 @@
  * 1) These should be styled using c-btn
  */
 button {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+/*------------------------------------*\
+    #Priest
+\*------------------------------------*/
+
+
+button,
+.button {
+  // display: inline-block;
+  border: none; // browser rest
+  padding: 0.85em 1em;
+  background: var(--secondary-color);
+  color: $white;
+  font-family: $major-font-family;
+  font-weight: bold;
+  font-size: 1.44em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+
+:is(button, .button):hover {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 10%));
+  color: $light-gray;
+}
+
+
+// where are the hover styles?
+
+.button.hollow {
+  // font-weight: bold;
+  background-color: transparent;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+  transition: 0.5s ease;
+}
+
+.button.hollow:hover {
+  background: $secondary-color;
+  color: $light-gray;
+  border-color: $secondary-color;
 }

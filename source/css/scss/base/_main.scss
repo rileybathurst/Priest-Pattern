@@ -9,3 +9,185 @@
 	display: block;
 	flex: 1 0 auto;
 }
+
+
+
+#menu_small {
+  background: darken($secondary-color, 10%); // 📣
+
+  // sliding menu
+  display: inline-block;
+  transition: 2s ease; // sliding menu
+  position: absolute;
+  z-index: 1; // check its above the gallery on the front page
+  margin-bottom: 0;
+  width: 100%;
+  
+  > ul {
+    padding-left: 0;
+    margin: 0;
+
+    > li {
+      list-style: none;
+      // margin-left: 0;
+
+      > a {
+        display: flex;
+        place-items: center; // vertical align
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+      
+        > svg {
+          max-height: 3rem; // guess and check
+          fill: currentColor;
+        } // svg
+      } // a
+    } // li
+  } // ul
+} // #menu_small
+// 🚨 inception only 3 deep
+
+.active {
+  margin-top: 3.9rem; // enough to show the home line but small enough to hide any gap
+}
+
+.inactive {
+  // margin-top: calc(-100% + 4rem); // 🚨 this is too much
+  margin-top: -100%;
+}
+
+// 🚨 I need more sheets
+#menu_toggle {
+  z-index: 2; // sliding menu
+  position: relative; // needed for z-index
+
+  display: grid;
+
+  @media (min-width: $header-menu-size) {
+    display: none;
+  }
+}
+
+
+.bg-secondary {
+  background: $secondary-color;
+  color: $white;
+
+  a {
+    color: $white; // 📣 this is the same as the text color so I should fix that at some point
+    text-decoration: underline;
+  }
+  a:hover {
+    color: $light-gray;
+    background: darken($secondary-color, 10%); // 📣 set this as a variable
+    transition: 0.5s ease;
+  }
+}
+
+nav,
+.menu-primary-container {
+  font-size: 1.2em;
+  letter-spacing: 0.1rem;
+
+  // @media (min-width: $breakpoint__large) {
+    font-family: $major-font-family; // 🚨 what is this before and why?
+  // }
+    display: none;
+
+  @media (min-width: $header-menu-size) { // never wrap
+    display: block;
+  }
+}
+
+.menu-primary-container > ul > a, // 🚨 this should never happen
+.menu-primary-container > ul > li > a {
+  border-bottom: 5px solid $secondary-color; // invisibile until hovered
+}
+
+.menu-primary-container > ul > a:hover,
+.menu-primary-container > ul > li > a:hover {
+  color: darken($white, 10%);
+  background: darken($secondary-color, 10%);
+  border-bottom: 5px solid darken($secondary-color, 20%);
+  // playing around with an additional design style
+  // this needs documentation I'm using a bunch of blues
+}
+
+
+
+.summit__contact--service {
+  // margin: 0 $global-margin $global-margin $global-margin;
+  margin: $global-margin;
+  display: grid;
+
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  > a {
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    background: $secondary-color;
+    background: linear-gradient(
+      184deg,
+      rgba(30, 141, 183, 1) 0%,
+      rgba(0, 96, 135, 1) 50%
+    ); // gradient has to be from 50% to get a pass on wave.webaim.org
+    // 5/23/21 the firefox wave plugin was calling an error on any text over a gradient background
+    z-index: 1; // above the background
+    display: flex;
+    flex-direction: row;
+    color: $white;
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+  }
+}
+
+.summit__contact--icon {
+  padding: $global-padding;
+  justify-self: end;
+
+  svg {
+    fill: $white;
+  }
+}
+
+.summit__contact--text {
+  // align-self: center; // can't do this to get a block
+  padding: $global-padding;
+  display: flex;
+  align-items: center;
+}
+
+// I'm not 100% this is the best way to do it but it works
+.summit-contact--skew {
+  transform: skewX(-8deg); // guess and check
+  background: $secondary-color;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 141, 183, 1) 0%,
+    rgba(0, 96, 135, 1) 100%
+  ); // 📣
+
+  @media (min-width: $breakpoint__large) {
+    transform: skewX(-4deg); // guess and check
+  }
+}
+
+// this might need a child hover
+.summit__contact--service:hover .summit-contact--skew {
+  background: $primary-color;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 141, 183, 0.75) 0%,
+    rgba(0, 96, 135, 0.75) 100%
+  );
+}
+
+.together {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
