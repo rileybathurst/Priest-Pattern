@@ -20,37 +20,37 @@
     "navItems" : [
         {
             "label" : "Home",
-            "url" : "link.pages-category"
+            "url" : "link"
         },
         {
             "label" : "Services",
-            "url" : "link.pages-category-men"
+            "url" : "link"
         },
         {
             "label" : "Gallery",
-            "url" : "link.pages-category-kids"
+            "url" : "link"
         },
         {
             "label" : "Contact",
-            "url" : "link.pages-category-on-sale"
+            "url" : "link"
         }
     ],
     "footerNav" : [
         {
             "label" : "Women",
-            "url" : "link.pages-category"
+            "url" : "link"
         },
         {
             "label" : "Men",
-            "url" : "link.pages-category-men"
+            "url" : "link"
         },
         {
             "label" : "Kids",
-            "url" : "link.pages-category-kids"
+            "url" : "link"
         },
         {
             "label" : "On Sale",
-            "url" : "link.pages-category-on-sale"
+            "url" : "link"
         }
     ],
     "progressTracker" : {

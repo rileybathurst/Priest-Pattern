@@ -1,6 +1,6 @@
 {
 	"hero" : {
-		"url": "link.pages-detail",
+		"url": "link",
 		"src": "../../images/group-shoes.jpg",
 		"alt": "Group of shoes",
 		"heading" :  "Shoes For The Soul"
@@ -49,19 +49,19 @@
 		"styleModifier" : "l-grid--4up",
 		"toutList" : [
 			{
-				"url": "link.pages-category",
+				"url": "link",
 				"headline":  "Women's fashion",
 				"imgLandscapeSrc" : "../../images/woman-outside-brownstone.jpg",
 				"imgLandscapeAlt" : "Woman in sweater"
 			},
 			{
-				"url": "link.pages-category",
+				"url": "link",
 				"headline": "Men's fashion",
 				"imgLandscapeSrc" : "../../images/smiling-man-in-formalwear.jpg",
 				"imgLandscapeAlt" : "Man in formalwear"
 			},
 			{
-				"url": "link.pages-category",
+				"url": "link",
 				"headline": "Kid's Fashion",
 				"imgLandscapeSrc" : "../../images/father-daughter-fashion.jpg",
 				"imgLandscapeAlt" : "Child with father"
@@ -73,7 +73,7 @@
 		"stackedBlockList": [
 			{
 				"styleModifier" : "",
-				"url" : "link.pages-detail",
+				"url" : "link",
 				"stackedBlockMedia": {
 					"src" : "../../images/men-blue-shoes.jpg",
 					"alt" : "blue walking shoes"
@@ -88,7 +88,7 @@
 			},
 			{
 				"styleModifier" : "",
-				"url" : "link.pages-detail",
+				"url" : "link",
 				"stackedBlockMedia": {
 					"src" : "../../images/women-hiking-boots.jpg",
 					"alt" : "leather boots"
@@ -103,7 +103,7 @@
 			},
 			{
 				"styleModifier" : "",
-				"url" : "link.pages-detail",
+				"url" : "link",
 				"stackedBlockMedia": {
 					"src" : "../../images/women-blue-heels.jpg",
 					"alt" : "blue heels"
@@ -120,7 +120,7 @@
 		],
 		"btnTag": false,
 		"linkTag": true,
-		"url": "link.pages-category-on-sale",
+		"url": "link-on-sale",
 		"buttonText" : "See All Sale Items"
 	}
 }
