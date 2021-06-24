@@ -2,14 +2,7 @@
 
 ``` % sass --watch source/css/style.scss source/css/style.css ```
 
-This needs to be moved it's currently living at
-
-living online at [priestpattern.rileybathurst.com](http://priestpattern.rileybathurst.com/?p=all)
-
-The problem being I don't hold the hosting so it might need a new tld
-
-.design is $39.99 annually
-.style is $34.99
+living online at [priest-pattern.netlify.app](https://priest-pattern.netlify.app/?p=all)
 
 ## Checks
 

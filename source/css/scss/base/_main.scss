@@ -120,6 +120,7 @@ nav,
   // margin: 0 $global-margin $global-margin $global-margin;
   margin: $global-margin;
   display: grid;
+  max-width: 30rem;
 
   > * {
     grid-row: 1;

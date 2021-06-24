@@ -57,6 +57,30 @@
   }
 }
 
+.cross__wrapper {
+  width: calc(100% - 2rem);
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .cross__hr {
+    width: 100%; // I dont know why but I have to double this
+  }
+
+  .cross__divider {
+    border-left: 2px solid $secondary-color;
+    border-right: 2px solid $secondary-color;
+    width: 0.8rem;
+    height: 1.6rem;
+    background: $white;
+    transform: skewX(-15deg); // guess and check
+  }
+}
 
 // can I do more of this with an @extend
 .swiss::before {

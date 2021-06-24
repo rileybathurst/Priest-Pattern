@@ -461,20 +461,39 @@ button {
 \*------------------------------------*/
 button,
 .button {
+  display: block;
   border: none;
   padding: 0.85em 1em;
+  line-height: 1.5rem;
   background: var(--secondary-color);
   color: #fefefe;
   font-family: "Roboto Slab", serif;
   font-weight: bold;
-  font-size: 1.44em;
-  text-transform: uppercase;
+  font-size: 1.5rem;
   letter-spacing: 1px;
+  margin-block-end: 1.6rem;
+  max-width: max-content;
+}
+
+:is(button, .button):visited {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
 }
 
 :is(button, .button):hover {
   background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 10%));
   color: #e6e6e6;
+}
+
+:is(button, .button):focus {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 25%));
+}
+
+:is(button, .button):active {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
+}
+
+.button.visited {
+  border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
 }
 
 .button.hollow {
@@ -488,6 +507,14 @@ button,
   background: #006087;
   color: #e6e6e6;
   border-color: #006087;
+}
+
+.button.hollow:focus {
+  border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 25%));
+}
+
+.button.hollow:active {
+  border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
 }
 
 /*------------------------------------*\
@@ -591,6 +618,7 @@ nav,
 .summit__contact--service {
   margin: 1rem;
   display: grid;
+  max-width: 30rem;
 }
 .summit__contact--service > * {
   grid-row: 1;
@@ -713,6 +741,28 @@ img {
   .tasks__divider--cross {
     grid-column: 1/8;
   }
+}
+
+.cross__wrapper {
+  width: calc(100% - 2rem);
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+}
+.cross__wrapper > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+.cross__wrapper .cross__hr {
+  width: 100%;
+}
+.cross__wrapper .cross__divider {
+  border-left: 2px solid #006087;
+  border-right: 2px solid #006087;
+  width: 0.8rem;
+  height: 1.6rem;
+  background: #fefefe;
+  transform: skewX(-15deg);
 }
 
 @media (min-width: 40em) {
