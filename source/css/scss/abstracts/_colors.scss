@@ -11,13 +11,14 @@ $primary-color: #1e93bd;
 $secondary-color: #006087;
 
 :root {
-  --primary-color-b: 195.8, 72.6%;
-  --primary-color-l: 42.9%;
-  --primary-color: hsl(var(--primary-color-b), var(--primary-color-l));
+    --primary-color-b: 195.8, 72.6%;
+    --primary-color-l: 42.9%;
+    // --primary-color: hsl(var(--primary-color-b), var(--primary-color-l));
+    --primary-color: hsl(195.8, 72.6%, 42.9%);
 
-  --secondary-color-b: 197.3, 100%;
-  --secondary-color-l: 26.5%;
-  --secondary-color: hsl(var(--primary-color-b), var(--primary-color-l));
+    --secondary-color-b: 197.3, 100%;
+    --secondary-color-l: 26.5%;
+    --secondary-color: hsl(var(--primary-color-b), var(--primary-color-l));
 }
 
 $black: #0a0a0a;
@@ -25,8 +26,6 @@ $white: #fefefe;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-
-
 
 /*------------------------------------*\
     #GLOBAL TEXT COLOR

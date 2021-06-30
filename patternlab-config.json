@@ -57,7 +57,7 @@
       },
       "js": "./source/js",
       "images": "./source/images",
-      "fonts": "./source/fonts",
+      "fonts": "",
       "css": "./source/css"
     },
     "public": {
