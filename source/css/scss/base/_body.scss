@@ -16,5 +16,7 @@ html {
  * 1) Set the body element's height to at least 100% of the viewport.
  *    This is used to achieve a sticky footer
  */
-/* body {
-} */
+body {
+    margin: 0; // browser reset
+
+}

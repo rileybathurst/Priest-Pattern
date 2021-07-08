@@ -4,13 +4,13 @@ html {
 }
 
 body {
+  font-family: var(--github-font-family);
   font-weight: 400;
   line-height: 1.65;
 }
 
 h1,
-.h1, // I think I want to rename these to a nice logical size
-// the XL, L, M, S may as well be this
+.h1,
 h2,
 .h2,
 h3,
@@ -22,18 +22,9 @@ h5,
 h6,
 .h6 {
   margin: 2.75rem 0 1.05rem; // 🚨 this is really large for smaller h tags // 🚨 never use 3
-  font-family: $major-font-family;
+  font-family: var(--major-font-family);
   font-weight: 400; // 📣 double check this
-  line-height: 1.15;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
+  line-height: 1.15em;
 }
 
 h1 {
@@ -69,8 +60,5 @@ small,
 }
 
 p {
-  // margin-bottom: $global-margin;
-  line-height: 1.6; // 🚨 body { line-height: 1.65;
-  font-family: "Open Sans", sans-serif; // 🚨 this isn't even in the variables
   margin-bottom: 1.15rem; // document this
 }

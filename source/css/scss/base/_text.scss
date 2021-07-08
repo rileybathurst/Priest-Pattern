@@ -24,7 +24,7 @@
 
 .tasks__divider {
   border: none; // we overwrite this next
-  border-bottom: 2px solid $secondary-color;
+  border-bottom: 2px solid var(--secondary-color);
   width: calc(100% - 2rem);
   grid-row: 5;
   grid-column: 1/4;
@@ -39,10 +39,10 @@
 }
 
 .tasks__divider--cross {
-  border-left: 2px solid $secondary-color;
-  border-right: 2px solid $secondary-color;
+  border-left: 2px solid var(--secondary-color);
+  border-right: 2px solid var(--secondary-color);
   width: 4px;
-  background: $white;
+  background: var(--white);
   grid-row: 5;
   grid-column: 1/4;
   justify-self: center;
@@ -73,11 +73,11 @@
   }
 
   .cross__divider {
-    border-left: 2px solid $secondary-color;
-    border-right: 2px solid $secondary-color;
+    border-left: 2px solid var(--secondary-color);
+    border-right: 2px solid var(--secondary-color);
     width: 0.8rem;
     height: 1.6rem;
-    background: $white;
+    background: var(--white);
     transform: skewX(-15deg); // guess and check
   }
 }
@@ -107,7 +107,7 @@
     content: "";
     width: calc(50% - 1em);
     border: 0.5rem solid #e6e6e6;
-    margin-left: $global-margin * 2;
+    margin-left: calc(var(--global-margin) * 2);
   }
 }
 

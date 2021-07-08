@@ -1,10 +1,10 @@
 .bg-black {
-  background: $black;
-  color: $white;
+  background: var(--black);
+  color: var(--white);
 
     // I think this is the currently the same as regular so it's not needed
     a {
-        color:$primary-color;
+        color:var(--primary-color);
         // 📣 document the contrast ratio
     }
 
@@ -14,6 +14,6 @@
     }
 
   .hidden-link {
-    color: $white;
+    color: var(--white);
   }
 }
