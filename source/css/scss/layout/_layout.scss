@@ -2,76 +2,22 @@
     #LAYOUT
 \*------------------------------------*/
 
-main {
-  max-width: 100vw;
-}
-
-.menu {
-  max-width: 70rem;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  justify-content: space-between;
-  padding: 0;
-  list-style: none;
-  position: relative;
-  display: flex;
-  // place-items: flex-end;
-  place-items: space-between;
-  gap: 0.5rem;
-  white-space: nowrap; // don't let lines break
-}
-
-.menu li {
-  > a {
-    padding: var(--global-padding); // lets start setting a vertical rythm
-    display: flex; // the only one using this is with the icon but it doesnt hurt the rest
-    place-items: flex-end;
-    gap: 0.5rem;
-  }
-
-  svg {
-    min-width: 1rem; // safari and edge need a width
-    max-height: 2.4rem; // guess and check
-
-    fill: var(--white);
-    margin-inline-end: 0.25rem;
-  }
-
-  // can I do something with is to get the svg and display it as a flex?
-}
-
 /*------------------------------------*\
   #SUMMIT
 \*------------------------------------*/
 
-/* .summit__backer {
-  // this is all under full so I remember it only displays at this size
-  @media (min-width: 144em) {
-    background: #efefef; // 📣
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: 3em; // guess and check
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 128px),
-      0 100%
-    ); // guess and check
-  }
-} */
-
 #summit {
-  background: #efefef; // 📣
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%);
-  margin: 0 auto;
+  background: var(--light-gray);
+  max-width: $breakpoint__full; // 🚨 this seems wrong
+  margin-inline: auto;
   margin-bottom: 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  
   grid-row: 1;
   grid-column: 1/3; // float in the center
-  display: grid;
-  max-width: $breakpoint__full; // 🚨 this seems wrong
   justify-self: center;
+
+  display: grid;
   grid-template-columns: 1fr 2rem 1fr;
   row-gap: 1rem;
 
@@ -79,7 +25,6 @@ main {
     grid-template-columns: 1fr 2rem 1fr 2rem 1fr;
     row-gap: 2rem;
     margin-block-end: calc(var(--global-margin) * 4);
-    // 3 col - 2 gap
   }
 }
 
@@ -87,41 +32,27 @@ main {
   grid-row: 1;
   grid-column: 1/4;
   padding: var(--global-padding);
-  max-width: 35em;
+  max-width: var(--general-measure);
   justify-self: center;
 
   h1 {
-    margin-top: 2.75rem; // back to type-scale
-    font-size: 1.728em;
-    line-height: 1.35em;
+    margin-top: 2.75rem;
+    font-size: var(--h3-fs);
+    line-height: var(--h-lh);
 
     @media (min-width: $breakpoint__medium) {
-      font-size: 2.074em; // h2 halfway back up
+      font-size: var(--h2-fs);
     }
-
-    /*     @media (min-width: $breakpoint__large) {
-      padding-left: calc(var(--global-padding) * 2); // not a margin due to need to center
-      padding-right: calc(var(--global-padding) * 2);
-    }
-  } // h1 */
-
-    /*   p {
-    @media (min-width: $breakpoint__large) {
-      padding-left: calc(var(--global-padding) * 2); // not a margin due to need to center
-      padding-right: calc(var(--global-padding) * 2);
-    } */
-  } // p
-} // .summit__info
+  }
+}
 
 // this is messy it uses svg and clip-path at different sizes
 .summit__about {
   grid-row: 3;
   grid-column: 1/4;
-  margin-bottom: var(--global-margin);
   justify-self: center;
-  background: var(--medium-gray);
+  margin-bottom: var(--global-margin);
   padding-inline: var(--global-padding);
-  
   @supports not (padding-inline: 1rem) {
     padding-left: var(--global-padding);
     padding-right: var(--global-padding);
@@ -130,38 +61,28 @@ main {
   @media (min-width: $breakpoint__medium) {
     width: calc(100% - 2rem);
     grid-column: 2/6;
-    grid-template-columns: 2em 1fr 2em;
+    grid-template-columns: 2em 1fr 2em; // where is the display coming from
     clip-path: polygon(2em 0, 100% 0, 100% 100%, 0 100%);
     margin-bottom: calc(var(--global-margin) * 2);
   }
 
   // still in .summit__about
   h2 {
-    font-size: 1.728em;
-    line-height: 1.33em; // guess and check select some text to check its right
+    font-size: var(--h3-fs);
+    line-height: var(--h-lh);
     max-width: $general-measure;
     margin: 2.75rem auto 1.05rem auto;
 
-    // use padding for the sides as we need margin to be center aligned
-    // or go to a flex?
     @media (min-width: $breakpoint__medium) {
-      padding-left: calc(var(--global-padding) * 2);
-      padding-right: calc(var(--global-padding) * 2);
+      padding-inline: calc(var(--global-padding) * 2);
     }
-
-    /*     @media (min-width: $breakpoint__large--half-step) {
-      font-size: 2.074em;
-      margin: 2.75rem auto 1.05rem auto;
-    } */
   }
 
   p {
-    // padding: var(--global-padding);
     max-width: $general-measure;
 
     @media (min-width: $breakpoint__medium) {
-      padding-left: calc(var(--global-padding) * 2);
-      padding-right: calc(var(--global-padding) * 2);
+      padding-inline: calc(var(--global-padding) * 2);
       margin: var(--global-margin) auto;
     }
   } // p
@@ -171,7 +92,7 @@ main {
   grid-row: 2;
   grid-column: 1/4;
   margin: 1rem;
-  max-width: 60rem; // double the measure guess and check
+  max-width: calc(--general-measure * 2); // double the measure guess and check
   aspect-ratio: 16 / 9;
 
   @media (min-width: $breakpoint__medium) {
@@ -180,70 +101,23 @@ main {
     margin: 2rem auto;
   }
 
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    grid-column: 1/8;
-    margin: 0 auto;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    grid-row: 1/3;
-    grid-column: 7/12;
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 8/16;
-  } */
-
   iframe {
-    clip-path: polygon(32px 0%, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
-
-    /*     @media (min-width: $breakpoint__large) {
-      clip-path: polygon(64px 0%, 100% 0%, calc(100% - 64px) 100%, 0% 100%);
-    } */
+    clip-path: polygon(2rem 0%, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
   }
 }
-
-// .summit__videobacker & .summit__videobacker--color should have something for both
 
 .summit__videobacker {
   grid-row: 2;
   grid-column: 1/4;
   z-index: -1;
-  clip-path: polygon(32px 0, 100% 0, 100% calc(100% - 32px), 0 100%);
-  // mix-blend-mode: luminosity;
-  // margin-bottom: var(--global-margin);
-  max-width: 60rem; // same as the video
+  clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  max-width: calc(var(--general-measure) * 2); // same as the video
   justify-self: end;
   aspect-ratio: 16 / 9;
 
   @media (min-width: $breakpoint__medium) {
     grid-column: 2/6;
-    // margin-bottom: 3rem;
   }
-
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    grid-column: 3/8;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    // display: none;
-    grid-row: 1/4;
-    grid-column: 7/12;
-    margin-bottom: 0;
-    clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%);
-    height: calc(100% + 4rem);
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 8/16;
-  } */
-
-  /*   // this changes to a completley different grid
-  @media (min-width: $breakpoint__full) {
-    grid-row: 1;
-    grid-column: 2;
-    margin-bottom: 0;
-  } */
 
   display: grid;
   place-items: center;
@@ -272,42 +146,14 @@ main {
   grid-row: 2;
   grid-column: 1/4;
   z-index: -1;
-  clip-path: polygon(32px 0, 100% 0, 100% calc(100% - 32px), 0 100%);
+  clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
   background: var(--secondary-color);
   mix-blend-mode: multiply;
-  // margin-bottom: var(--global-margin);
   aspect-ratio: 16 / 9;
 
   @media (min-width: $breakpoint__medium) {
     grid-column: 2/6;
-    // margin-bottom: 3rem;
-    // height: calc(100% - 8rem);
   }
-
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    grid-column: 3/8;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    grid-row: 1/4;
-    grid-column: 7/12;
-    margin-bottom: 0;
-    clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%);
-    height: calc(100% + 4rem);
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 8/16;
-  } */
-
-  /*   // this changes to a completley different grid
-  @media (min-width: $breakpoint__full) {
-    grid-row: 1;
-    grid-column: 2;
-    // margin-bottom: 0;
-  } */
-
-  display: none;
 }
 
 .summit__team-photo_1 {
@@ -322,22 +168,6 @@ main {
     grid-column: 1/3;
     margin-bottom: calc(var(--global-margin) * 2);
   }
-
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    grid-column: 1/5;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    grid-row: 2;
-    grid-column: 1/3;
-    // max-width: $general-measure;
-    // this is needed before full is it really needed here?
-    margin-left: 3rem;
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 1/5;
-  } */
 
   > .gatsby-image-wrapper {
     @media (min-width: $breakpoint__medium) {
@@ -360,41 +190,19 @@ main {
     margin-bottom: calc(var(--global-margin) * 2);
   }
 
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    grid-column: 4/8;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    grid-column: 4/7;
-    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 4/9;
-  } */
-
   > .gatsby-image-wrapper {
     // start at medium when its beside text
     @media (min-width: $breakpoint__medium) {
       height: calc(100% - 5.75rem);
       margin-top: 3.75rem; // match the h1 tag then guess and check
     }
-
-    /*     @media (min-width: $breakpoint__medium--half-step) {
-      // height: calc(100% - 12.75rem); // guess and check
-      height: calc(100% - 4.75rem); // guess and check
-    } */
-
-    /*     @media (min-width: $breakpoint__large) {
-      height: calc(100% - 5.75rem); // guess and check
-    } */
   } // .gatsby-image-wrapper
 } // .summit__team-photo_2
 
 .summit__contact {
   grid-row: 5;
   grid-column: 1/4;
-  margin-bottom: calc(var(--global-margin) * 2);
+  margin-bottom: 2rem;
   max-width: 86rem; // guess and check so the angled box sit the same as the
   margin-left: auto;
   margin-right: auto;
@@ -405,30 +213,10 @@ main {
     margin-block-end: calc(var(--global-margin) * 4);
   }
 
-  /*   @media (min-width: $breakpoint__medium) {
-    grid-column: 1/8;
-  } */
-
-  /*   @media (min-width: $breakpoint__large) {
-    grid-row: 3;
-    grid-column: 1/6;
-    // justify-self: end;
-  } */
-
-  /*   @media (min-width: $breakpoint__large--half-step) {
-    grid-column: 1/8;
-  } */
-
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  // flex-direction: column;
-
-  /*   @media (min-width: $breakpoint__medium--half-step) {
-    flex-direction: row;
-    justify-content: space-around;
-  } */
 }
 
 .summit__contact--service {
@@ -449,12 +237,7 @@ main {
     color: var(--white);
     background: var(--secondary-color);
     background: var(--black);
-      background: linear-gradient(
-      184deg,
-      rgba(30, 141, 183, 1) 0%,
-      rgba(0, 96, 135, 1) 50%
-    );
-
+    background: var(--priest-blend);
     clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
   }
 }
@@ -479,6 +262,156 @@ main {
   grid-column: 1/3;
   transform: skewX(-8deg); // guess and check
   background: var(--secondary-color);
+  background: var(--priest-blend);
+
+  @media (min-width: $breakpoint__large) {
+    transform: skewX(-4deg); // guess and check
+  }
+}
+
+// this might need a child hover
+.summit__contact--service:hover .summit-contact--skew {
+  background: var(--secondary-color);
+  background: var(--priest-blend);
+}
+
+.hero-logo {
+  display: grid;
+  place-items: center;
+
+  // 📣 these next parts are design not layout
+  z-index: 3; // sliding logo
+  position: relative; // needed for z-index
+
+  svg {
+    fill: var(--white);
+    width: 100%; // needed for chrome
+  }
+
+  a {
+    display: inline-block;
+    // max-width: 33%;
+    max-width: 50%;
+    margin: var(--global-margin) auto;
+    padding: var(--global-padding); // start doing more with a type scale and vertical rythm
+    border-radius: 5px;
+
+    @media (min-width: $breakpoint__medium) {
+      max-width: $general-measure;
+      margin-top: calc(var(--global-margin) * 2);
+      margin-bottom: calc(var(--global-margin) * 2);
+    } // @media
+  } // a
+} // .hero-logo
+
+.hero-logo a:hover {
+  background: hsl(var(--primary-color-b), calc(var(--primary-color-b) - 10%));
+  transition: 0.5s ease;
+
+  svg {
+    fill: var(--light-gray);
+  }
+}
+
+.service-grid {
+  display: grid;
+}
+
+.service-grid img,
+.service-grid h4 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.service-grid-bg {
+  background-color: rgba(10, 127, 189, 0.7);
+  //rgba has alpha so not sure about how to have a variable
+  align-self: end;
+
+  > a {
+    color: var(--white);
+  }
+
+  > a:hover {
+  color: var(--light-gray);
+  }
+}
+
+.service {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint__medium) {
+    flex-direction: row;
+  }
+
+  > div {
+    flex: 1;
+    margin: var(--global-padding);
+  }
+}
+
+.small_menu--opener {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding-top: var(--global-padding);
+  padding-bottom: var(--global-padding);
+  transition: 1s ease;
+}
+
+.small_menu--opener:hover {
+  color: var(--light-gray);
+  background: hsl(var(--primary-color-b), calc(var(--primary-color-b) - 10%)); // 📣
+}
+
+.summit__contact--service {
+  // margin: 0 var(--global-margin) var(--global-margin) var(--global-margin);
+  margin: var(--global-margin);
+  display: grid;
+  max-width: 30rem;
+
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  > a {
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    background: var(--secondary-color);
+    background: var(--priest-blend);
+    z-index: 1; // above the background
+    display: flex;
+    flex-direction: row;
+    color: var(--white);
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+  }
+}
+
+.summit__contact--icon {
+  padding: var(--global-padding);
+  justify-self: end;
+
+  svg {
+    fill: var(--white);
+  }
+}
+
+.summit__contact--text {
+  // align-self: center; // can't do this to get a block
+  padding: var(--global-padding);
+  display: flex;
+  align-items: center;
+}
+
+// I'm not 100% this is the best way to do it but it works
+.summit-contact--skew {
+  transform: skewX(-8deg); // guess and check
+  background: var(--secondary-color);
   background: linear-gradient(
     180deg,
     rgba(30, 141, 183, 1) 0%,
@@ -501,9 +434,10 @@ main {
 }
 
 /*------------------------------------*\
-    #GRID
+  #PAGE
 \*------------------------------------*/
 
+// should this be main or something similar?
 .page {
   max-width: 75rem;
   margin-inline: auto;
@@ -523,4 +457,149 @@ main {
       flex: 1 1 5rem;
     }
   }
+}
+
+.site {
+  display: grid; // this just for the 100 vh but there might be a smarter way
+  min-height: 100vh;
+}
+
+.grid-container {
+  padding-left: var(--global-padding);
+  padding-right: var(--global-padding);
+  max-width: var(--page-width);
+  margin-inline: auto;
+}
+
+// this is needed for the hr
+// there might be a better way to do that
+.tasks__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: $breakpoint__full;
+  margin: 0 auto;
+}
+
+.tasks {
+  display: grid;
+  // overlays so it has to be a grid
+  margin-bottom: calc(var(--global-margin) * 2);
+  max-width: 70rem; // double measure enough space for the margins
+  margin: 0 auto;
+  margin-bottom: 2rem;
+
+  // grid-template-columns:
+  // I presume this is running on default because it's nice and simple
+
+  @media (min-width: $breakpoint__medium) {
+    grid-template-columns: 1fr 2em 1fr 2em 1fr;
+  }
+
+  // this is getting really complicated should it start being named and changed?
+  @media (min-width: $breakpoint__medium--half-step) {
+    grid-template-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
+  }
+}
+
+.together {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cross__wrapper {
+  width: calc(100% - 2rem);
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .cross__hr {
+    width: 100%; // I dont know why but I have to double this
+  }
+
+  .cross__divider {
+    border-left: 2px solid var(--secondary-color);
+    border-right: 2px solid var(--secondary-color);
+    width: 0.8rem;
+    height: 1.6rem;
+    background: var(--white);
+    transform: skewX(-15deg); // guess and check
+  }
+}
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+.footer-contact-areas {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--global-padding);
+}
+
+footer {
+  align-self: end;
+  margin-bottom: 0; // browser reset
+}
+
+.footer-icons {
+  /* display: grid;
+	justify-items: center; // I think this was the whole point but I can probably do it easier with a flex */
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint__medium) {
+    flex-direction: row;
+  }
+}
+
+.footer-icon-icon {
+  //terrible names
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+
+  @media (min-width: $breakpoint__large) {
+    justify-self: end;
+  }
+}
+
+.footer-icon-icon svg {
+  fill: var(--primary-color);
+}
+
+.footer-icon-icon svg:hover {
+  fill: var(--secondary-color);
+}
+
+.footer-icon-text {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+
+  @media (min-width: $breakpoint__large) {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+}
+
+.footer-extra {
+  display: block;
+  margin-top: 0;
+}
+
+.copyright {
+  float: left; // needed to have the p margin inside of this
+  width: 100%;
+  padding-top: 1rem;
 }

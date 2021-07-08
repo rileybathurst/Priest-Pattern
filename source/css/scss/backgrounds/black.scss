@@ -4,12 +4,10 @@
 
     // I think this is the currently the same as regular so it's not needed
     a {
-        color:var(--primary-color);
-        // 📣 document the contrast ratio
+        color:var(--primary-color); // 1:5.62 
     }
 
-    a:hover {
-        // color: ;
+    a:where(:hover, :focus) {
         text-decoration: underline;
     }
 

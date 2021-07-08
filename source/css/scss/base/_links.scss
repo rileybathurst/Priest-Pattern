@@ -2,13 +2,14 @@
     #LINKS
 \*------------------------------------*/
 
-/**
- * Link base styles
- */
-/* a {
-	&:hover, &:focus {
-	}
+a {
+  text-decoration: none;
+}
 
-	&:active {
-	}
-} */
+a:where(:hover, :focus) {
+  text-decoration: underline;
+}
+
+.hidden-link {
+  color: var(--black);
+}

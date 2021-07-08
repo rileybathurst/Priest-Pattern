@@ -1,0 +1,17 @@
+.bg-primary {
+  background: var(--primary-color);
+  // contrast to black 1:5.62 // stay with this
+
+  a {
+    color: var(--blackish); // contrast 1:4.52 // as far as I can go
+  }
+
+  /* a:where(:hover, :focus) {
+    // color: var(--light-gray); // contrast 1:2.82 🚨 Fail
+    text-decoration: underline; // from main
+  } */
+
+  cite {
+    color: var(--blackish); // contrast 1:4.52 // as far as I can go
+  }
+}

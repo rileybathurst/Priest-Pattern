@@ -1,10 +1,14 @@
 .bg-secondary {
-    background: var(--secondary-color);
-  
-    a {
-      color: var(--white);
-    }
-    a:hover {
-      color: var(--light-gray);
-    }
+  background: var(--secondary-color);
+  color: var(--white); // 1:6.88
+
+  a {
+    color: var(--white); // 1:6.88
+    text-decoration: underline;
   }
+
+  a:where(:hover, :focus) {
+    color: var(--light-gray); // 1:5.56
+    transition: 0.5s ease;
+  }
+}

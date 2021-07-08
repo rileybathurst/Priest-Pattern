@@ -1,12 +1,13 @@
-// typescale.com 1.200 Minor Third
+// type-scale.com 1.200 Minor Third
 html {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--github-font-family);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.65; // 🤮 26.4px
+  line-height: 1.5rem; // 24px
 }
 
 h1,
@@ -21,44 +22,52 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin: 2.75rem 0 1.05rem; // 🚨 this is really large for smaller h tags // 🚨 never use 3
+  // margin: 2.75rem 0 1.05rem; // 🚨 this is really large for smaller h tags // 🚨 never use 3
   font-family: var(--major-font-family);
   font-weight: 400; // 📣 double check this
   line-height: 1.15em;
 }
 
+// 🚨 I need to do some stuff with clamps
+
 h1 {
   margin-top: 0; // why am I crushing this in all situations
-  font-size: 2.488em; // 39.808px
+  // font-size: 2.488em; // 🤮 39.808px
+  font-size: var(--h1-fs); // 40px
 }
 
 h2 {
-  font-size: 2.074em;
-} // 33.184px
+  // font-size: 2.074em; // 🤮 33.184px
+  font-size: var(--h2-fs); // 34px
+}
 
 h3 {
-  font-size: 1.728em; // 27.684px
-  margin-top: 1rem; // this seems like a bad place to have this even if the one use is nice
+  // font-size: 1.728em; // 🤮 27.684px
+  font-size: var(--h3-fs); // 28px
+  // margin-top: 1rem; // this seems like a bad place to have this even if the one use is nice
 }
 
 h4 {
-  font-size: 1.44em;
-} // 23.04px
+  // font-size: 1.44em; // 🤮 23.04px
+  font-size: var(--h4-fs); // 24px
+}
 
 h5 {
-  font-size: 1.2em;
-} // 19.2px
+  // font-size: 1.2em; // 🤮 19.2px
+  font-size: var(--h5-fs); // 20px
+}
 
-// 📣 this is scrappy names it should just be .h5
-.one-point-two-em {
-  font-size: 1.2em;
+h6 {
+  // font-size: .67em; // browser default
+  font-size: var(--h6-fs); // 16px browser reset
 }
 
 small,
 .text_small {
-  font-size: 0.833em;
+  // font-size: 0.833em; // 🤮 13.3 gross
+  font-size: var(--sm-fs); // 12px
 }
 
 p {
-  margin-bottom: 1.15rem; // document this
+  margin-bottom: 1.25rem; // 20px
 }

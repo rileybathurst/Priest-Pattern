@@ -13,37 +13,30 @@ button {
   background: var(--secondary-color);
   color: var(--white);
   font-family: var(--major-font-family);
-  font-weight: bold;
-  font-size: 1.44em;
+  font-weight: bold; // always use with --major
+  letter-spacing: 1px;
+  font-size: var(--h5-fs);
 }
 
-// why us this so different? only use once can I get rid of it?
 .button {
+  @extend button;
   display: inline-block;
-  padding: 0.85em 1em;
-  font-family: var(--major-font-family);
-  font-weight: bold;
-  // text-transform: uppercase;
-  letter-spacing: 1px;
 }
-// where are the hover styles?
 
 .button.hollow {
-  // font-weight: bold;
   background-color: transparent;
   border: 2px solid var(--secondary-color);
   color: var(--secondary-color);
-  transition: 0.5s ease;
+  transition: 0.5s ease; // 📣
 }
 
-.button.hollow:hover {
-  background: var(--secondary-color);
-  color: var(--light-gray);
-  border-color: var(--secondary-color);
-}
+/*------------------------------------*\
+  #INTERACTION
+\*------------------------------------*/
 
 :is(button, .button):visited {
   background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
+  border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
 }
 
 :is(button, .button):hover {
@@ -57,20 +50,6 @@ button {
 
 :is(button, .button):active {
   background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
-}
-
-// where are the hover styles?
-
-.button.visited {
-  border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 5%));
-}
-
-.button.hollow {
-  // font-weight: bold;
-  background-color: transparent;
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-  transition: 0.5s ease;
 }
 
 .button.hollow:hover {

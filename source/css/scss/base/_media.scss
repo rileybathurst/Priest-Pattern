@@ -7,6 +7,60 @@
  * 1) Allows for images to flex with varying screen size
  */
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-100,
+.img-100 img {
+  width: 100%;
+}
+
+.img-100-high {
+  overflow-x: hidden;
+}
+
+// sets the height cuts the side
+.img-100-high img {
+  height: 100%;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.hero {
+  display: grid;
+  max-width: calc($page-width - 1px); // stops 3 or more columns
+  margin-block: var(--global-margin);
+  padding: var(--global-padding); // small size never get to the edge
+  grid-gap: var(--global-grid-gap);
+
+  // start doing columns once its bigger - slightly a hack
+  @media (min-width: $breakpoint__medium) {
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+  }
+
+  > img {
+    width: 100%;
+  }
+}
+
+/*------------------------------------*\
+  #SHADOWS
+\*------------------------------------*/
+
+// 🚨 needs love and variables
+.shadow {
+  // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); // current, Im not sure why I was doing 2 shadows seems overly complicated
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+}
+
+.shadow-darker {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.32), 0 2px 10px 0 rgba(0, 0, 0, 0.24);
+}
+
+.attachment-post-thumbnail {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
