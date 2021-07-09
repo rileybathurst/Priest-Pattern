@@ -1,0 +1,287 @@
+/*------------------------------------*\
+  #SUMMIT
+\*------------------------------------*/
+
+.summit__backer {
+  background: var(--light-gray);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  margin-block-end: 3rem;
+}
+
+#summit {
+  background: var(--light-gray);
+  max-width: var(--page-width);
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1rem 1fr;
+  // there shouldnt be a gap as this has the middle
+
+  @media (min-width: $breakpoint__medium) {
+    grid-template-columns: 1fr 1fr 1fr; // is this right?
+    margin-block-end: calc(var(--global-margin) * 4);
+  }
+}
+
+.summit__info {
+  grid-row: 1;
+  grid-column: 1/3;
+  padding: var(--global-padding);
+  max-width: var(--general-measure);
+  justify-self: center;
+
+  h1 {
+    margin-top: 2.75rem;
+    font-size: var(--h3-fs);
+    line-height: var(--h-lh);
+
+    @media (min-width: $breakpoint__medium) {
+      font-size: var(--h2-fs);
+    }
+  }
+}
+
+.summit__about {
+  grid-row: 3;
+  grid-column: 1/3;
+  justify-self: center;
+  margin-bottom: var(--global-margin);
+  padding-inline: var(--global-padding);
+  @supports not (padding-inline: 1rem) {
+    padding-left: var(--global-padding);
+    padding-right: var(--global-padding);
+  }
+
+  @media (min-width: $breakpoint__medium) {
+    width: calc(100% - 2rem);
+    grid-column: 2/4;
+    margin-bottom: calc(var(--global-margin) * 2);
+  }
+
+  // still in .summit__about
+  h2 {
+    font-size: var(--h3-fs);
+    line-height: var(--h-lh);
+    max-width: $general-measure;
+    margin: 2.75rem auto 1.05rem auto;
+
+    @media (min-width: $breakpoint__medium) {
+      padding-inline: calc(var(--global-padding) * 2);
+    }
+  }
+
+  p {
+    max-width: $general-measure;
+
+    @media (min-width: $breakpoint__medium) {
+      padding-inline: calc(var(--global-padding) * 2);
+      margin: var(--global-margin) auto;
+    }
+  } // p
+} // .summit__about
+
+.summit__video {
+  grid-row: 2;
+  grid-column: 1/4;
+  margin: 1rem;
+  max-width: calc(
+    var(--general-measure) * 2
+  ); // double the measure guess and check
+  aspect-ratio: 16 / 9;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-column: 1/4;
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+  }
+
+  iframe {
+    clip-path: polygon(2rem 0%, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+  }
+}
+
+.summit__videobacker {
+  grid-row: 2;
+  grid-column: 1/4;
+  z-index: -1;
+  clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  max-width: calc(var(--general-measure) * 2); // same as the video
+  justify-self: end;
+  aspect-ratio: 16 / 9;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-column: 2/4;
+  }
+
+  display: grid;
+  place-items: center;
+
+  // this controls the blue overlay
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .gatsby-image-wrapper {
+    height: 100%;
+  } // .gatsby-image-wrapper
+} // .summit__videobacker
+
+/* .blue-backer {
+  background: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  aspect-ratio: 16 / 9;
+} */
+
+.summit__videobacker--color {
+  grid-row: 2;
+  grid-column: 1/4;
+  z-index: -1;
+  clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  background: var(--secondary-color);
+  mix-blend-mode: multiply;
+  aspect-ratio: 16 / 9;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-column: 1/4;
+  }
+}
+
+.summit__team-photos {
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, calc(100% - 3rem) 100%, 0 100%);
+  margin-bottom: var(--global-margin);
+  max-width: var(--measure);
+
+  @media (min-width: $breakpoint__medium) {
+    margin-bottom: calc(var(--global-margin) * 2);
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+  }
+
+  > .gatsby-image-wrapper {
+    @media (min-width: $breakpoint__medium) {
+      height: 100%; // match the box
+      margin-bottom: -5rem; // guess and check
+    }
+  } // .gatsby-image-wrapper
+}
+
+.summit__team-photo_1 {
+  @extend .summit__team-photos;
+  grid-row: 4;
+  grid-column: 1/3;
+  margin-right: 0.5rem;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-row: 3;
+    grid-column: 1;
+  }
+} // .summit__team-photo_1
+
+.summit__team-photo_2 {
+  @extend .summit__team-photos;
+  grid-row: 4;
+  grid-column: 2/4;
+  margin-left: 0.5rem;
+  justify-self: end;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-row: 1;
+    grid-column: 3;
+  }
+} // .gatsby-image-wrapper
+
+.summit__contact {
+  grid-row: 5;
+  grid-column: 1/4;
+  margin-block-end: calc(var(--global-margin) * 2);
+  max-width: 86rem; // guess and check so the angled box sit the same as the
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $breakpoint__medium) {
+    grid-row: 4;
+    grid-column: 1/4;
+    margin-block-end: calc(var(--global-margin) * 4);
+  }
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.summit__contact--service {
+  margin: var(--global-margin);
+
+  > a {
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--white);
+    background: var(--secondary-color);
+    background: var(--priest-blend);
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+  }
+}
+
+.summit__contact--icon {
+  padding: var(--global-padding);
+  justify-self: end;
+  svg {
+    fill: currentColor;
+  }
+}
+
+.summit__contact--text {
+  padding: var(--global-padding);
+  display: flex;
+  align-items: center;
+}
+
+// I'm not 100% this is the best way to do it but it works
+.summit-contact--skew {
+  grid-row: 1;
+  grid-column: 1/3;
+  transform: skewX(-8deg); // guess and check
+  background: var(--secondary-color);
+  background: var(--priest-blend);
+
+  @media (min-width: $breakpoint__large) {
+    transform: skewX(-4deg); // guess and check
+  }
+}
+
+.summit__contact--icon {
+  padding: var(--global-padding);
+  justify-self: end;
+
+  svg {
+    fill: var(--white);
+  }
+}
+
+.summit__contact--text {
+  // align-self: center; // can't do this to get a block
+  padding: var(--global-padding);
+  display: flex;
+  align-items: center;
+}
+
+// I'm not 100% this is the best way to do it but it works
+.summit-contact--skew {
+  transform: skewX(-8deg); // guess and check
+  background: var(--secondary-color);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 141, 183, 1) 0%,
+    rgba(0, 96, 135, 1) 100%
+  ); // 📣
+
+  @media (min-width: $breakpoint__large) {
+    transform: skewX(-4deg); // guess and check
+  }
+}

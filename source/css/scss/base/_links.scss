@@ -10,6 +10,27 @@ a:where(:hover, :focus) {
   text-decoration: underline;
 }
 
+.backed:where(:hover, :focus) {
+  padding: 0.5rem 1rem;
+  background: hsla(0, 0, 33%, 0.5);
+  transition: .5s ease;
+}
+
 .hidden-link {
   color: var(--black);
+}
+
+#menu__big {
+  a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 5px solid transparent;
+  }
+
+  a:where(:hover, :focus) {
+    color: var(--light-gray);
+    background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 10%));
+    clip-path: polygon(1rem 0,100% 0,calc(100% - 1rem) 100%,0 100%);
+    border-color: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 20%));
+  }
 }

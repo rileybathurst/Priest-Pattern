@@ -1,0 +1,66 @@
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+footer {
+  background: var(--secondary-color);
+  border-top: 0.5rem solid var(--primary-color);
+  align-self: end;
+  margin-bottom: 0; // browser reset
+}
+
+.footer-contact-areas {
+  max-width: var(--page-width);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--global-padding);
+
+  > .contact__method {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint__medium) {
+      flex-direction: row;
+    }
+  }
+
+  svg {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    fill: var(--white);
+
+    @media (min-width: $breakpoint__large) {
+      justify-self: end;
+    }
+  }
+
+  a {
+    color: var(--white);
+  }
+
+  p {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+
+    @media (min-width: $breakpoint__large) {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: start;
+    }
+  }
+}
+
+.copyright {
+  width: 100%;
+  margin-block-start: 1rem;
+  // generally dont like having top margins
+  text-align: center;
+  color: var(--white);
+
+  a {
+    color: var(--white);
+  }
+}

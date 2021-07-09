@@ -55,6 +55,7 @@ nav {
 }
 
 #menu_small {
+  width: 100%;
   background: hsl(var(--primary-color-b), calc(var(--primary-color-l) - 10%));
   // a little darker so it can be seen when slid down
 
@@ -64,7 +65,7 @@ nav {
   position: absolute;
   z-index: 1; // check its above the gallery on the front page
   margin-bottom: 0;
-  width: 100%;
+
   
   > ul {
     padding-left: 0; // browser reset
@@ -117,30 +118,20 @@ nav {
 }
 
 // 📣 this needs to be closer to the smaller nav to make sense
-.menu-primary-container {
+#menu__big {
   @extend nav;
   display: none;
 
   @media (min-width: $header-menu-size) {
     display: block;
+    width: 100%;
+    max-width: var(--page-width);
+    margin-inline: auto;
+    background: var(--secondary-color);
   }
 
-  > ul > li {
-    padding: 1rem 0.5rem;
-    // this helps get the border back in line
-    margin-bottom: 2px;
-    margin-top: -2px;
-
-    > a {
-      padding: 1rem;
-      border-bottom: 5px solid var(--secondary-color);
-    } // a
-  } // li
+  a {
+    padding-inline: 2rem;
+  }
 } // .menu-primary-container
 
-.menu-primary-container > ul > li > a:hover {
-  color: --light-gray;
-  background: hsl(var(--primary-color-b), calc(var(--primary-color-b) - 10%));
-  border-bottom: 5px solid
-    hsl(var(--secondary-color-b), calc(var(--primary-color-l) - 20%)); // playing around with an additional design style
-}

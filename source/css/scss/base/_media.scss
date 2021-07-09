@@ -29,21 +29,11 @@ iframe {
   max-width: 100%;
 }
 
-.hero {
-  display: grid;
-  max-width: calc($page-width - 1px); // stops 3 or more columns
-  margin-block: var(--global-margin);
-  padding: var(--global-padding); // small size never get to the edge
-  grid-gap: var(--global-grid-gap);
-
-  // start doing columns once its bigger - slightly a hack
-  @media (min-width: $breakpoint__medium) {
-    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
-  }
-
-  > img {
-    width: 100%;
-  }
+svg {
+  width: 100%;
+  height: 100%;
+  max-width: 5rem;
+  max-width: 5rem;
 }
 
 /*------------------------------------*\

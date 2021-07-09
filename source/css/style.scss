@@ -30,11 +30,7 @@
 @import "scss/base/_main";
 @import "scss/base/_media";
 @import "scss/base/_text";
-
-/*------------------------------------*\
-    #LAYOUT
-\*------------------------------------*/
-@import "scss/layout/_layout";
+@import "scss/base/_hr";
 
 /*------------------------------------*\
     #BACKGROUNDS
@@ -44,6 +40,11 @@
 @import "scss/backgrounds/medium-gray";
 @import "scss/backgrounds/light-gray";
 @import "scss/backgrounds/secondary";
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+@import "scss/layout/_layout";
 
 /*------------------------------------*\
     #UTILITIES
