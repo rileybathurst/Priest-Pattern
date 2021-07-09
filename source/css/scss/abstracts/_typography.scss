@@ -26,6 +26,7 @@ h6,
   font-family: var(--major-font-family);
   font-weight: 400; // 📣 double check this
   line-height: 1.15em;
+  margin-block-end: 1.15em;
 }
 
 // 🚨 I need to do some stuff with clamps
@@ -70,4 +71,24 @@ small,
 
 p {
   margin-bottom: 1.25rem; // 20px
+}
+
+blockquote {
+  > :is(h1, h2, h3, h4, h5, h6, p)::before {
+    content: '"'; // left quote
+    font-family: var(--major-font-family);
+    font-size: 2.488rem;
+    line-height: 1rem;
+    font-weight: bold;
+    margin-right: calc(var(--global-margin) / 2);
+  }
+
+  > :is(h1, h2, h3, h4, h5, h6, p) {
+    margin-block-end: 1rem;
+  }
+
+  > footer {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 }

@@ -1,8 +1,16 @@
 <footer>
-	{{> molecules-footer-contact }}
-	{{!-- {{> molecules-footer-services }} --}}
-	{{!-- {{> molecules-footer-industries }} --}}
-
+	{{> molecules-footer-contacts }}
+	{{> atoms-cross-hr }}
+	<h3 class="centered">Services</h3>
+	{{> molecules-footer-services }}
+	{{> atoms-cross-hr }}
+	<h3 class="centered">Industries</h3>
+	{{> molecules-footer-industries }}
+	{{> atoms-cross-hr }}
+	<div class="footer__logo">
+		<a href="#" class="backed__svg">
+			{{> atoms-icon }}
+		</a>
+	</div>
 	{{> molecules-copyright }}
-
 </footer>

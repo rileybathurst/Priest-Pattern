@@ -6,7 +6,9 @@
   width: calc(100% - 2rem);
   display: grid;
   place-items: center;
+  max-width: var(--page-width);
   margin-inline: auto;
+  margin-block-end: 3rem;
 
   > * {
     grid-row: 1;

@@ -91,12 +91,16 @@ $page-width: 77em; // this should probably meet up with breakpoints
 :root {
     --global-margin: 1rem;
     --global-padding: 1rem;
-    --global-grid-gap: --global-margin;
+    --global-grid-gap: var(--global-margin);
 }
 
 /*------------------------------------*\
     #BORDERS
 \*------------------------------------*/
+
+:root {
+    --backed-radius: 0.5rem;
+}
 
 /*------------------------------------*\
     #ANIMATION

@@ -85,12 +85,16 @@
 :root {
   --global-margin: 1rem;
   --global-padding: 1rem;
-  --global-grid-gap: --global-margin;
+  --global-grid-gap: var(--global-margin);
 }
 
 /*------------------------------------*\
     #BORDERS
 \*------------------------------------*/
+:root {
+  --backed-radius: 0.5rem;
+}
+
 /*------------------------------------*\
     #ANIMATION
 \*------------------------------------*/
@@ -193,6 +197,7 @@ h6,
   font-family: var(--major-font-family);
   font-weight: 400;
   line-height: 1.15em;
+  margin-block-end: 1.15em;
 }
 
 h1 {
@@ -229,6 +234,22 @@ p {
   margin-bottom: 1.25rem;
 }
 
+blockquote > :is(h1, h2, h3, h4, h5, h6, p)::before {
+  content: '"';
+  font-family: var(--major-font-family);
+  font-size: 2.488rem;
+  line-height: 1rem;
+  font-weight: bold;
+  margin-right: calc(var(--global-margin) / 2);
+}
+blockquote > :is(h1, h2, h3, h4, h5, h6, p) {
+  margin-block-end: 1rem;
+}
+blockquote > footer {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
@@ -250,12 +271,6 @@ body,
 div,
 object,
 iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p,
 blockquote,
 ol,
@@ -323,10 +338,14 @@ a:where(:hover, :focus) {
   text-decoration: underline;
 }
 
-.backed:where(:hover, :focus) {
+:is(.backed, .backed__svg svg) {
   padding: 0.5rem 1rem;
-  background: rgba(84, 84, 84, 0.5);
   transition: 0.5s ease;
+  border-radius: var(--backed-radius);
+}
+
+:is(.backed, .backed__svg svg):where(:hover, :focus) {
+  background: rgba(84, 84, 84, 0.5);
 }
 
 .hidden-link {
@@ -665,7 +684,6 @@ svg {
   width: 100%;
   height: 100%;
   max-width: 5rem;
-  max-width: 5rem;
 }
 
 /*------------------------------------*\
@@ -703,7 +721,7 @@ svg {
 /* hr {
   I need something here for a default
 } */
-.text-center {
+.centered {
   text-align: center;
 }
 
@@ -714,7 +732,9 @@ svg {
   width: calc(100% - 2rem);
   display: grid;
   place-items: center;
+  max-width: var(--page-width);
   margin-inline: auto;
+  margin-block-end: 3rem;
 }
 .cross__wrapper > * {
   grid-row: 1;
@@ -812,8 +832,6 @@ svg {
 .hero > .hero__logo > a {
   display: inline-block;
   padding: 0.5rem 1rem;
-  max-width: 50%;
-  margin: 2rem auto;
   border-radius: 5px;
 }
 @media (min-width: 40em) {
@@ -824,6 +842,9 @@ svg {
   }
 }
 .hero > .hero__logo > a > svg {
+  display: block;
+  max-width: 50%;
+  margin: 2rem auto;
   fill: var(--white);
   width: 100%;
 }
@@ -863,10 +884,15 @@ svg {
 
 .summit__info {
   grid-row: 1;
-  grid-column: 1/3;
+  grid-column: 1/4;
   padding: var(--global-padding);
   max-width: var(--general-measure);
   justify-self: center;
+}
+@media (min-width: 40em) {
+  .summit__info {
+    grid-column: 1/3;
+  }
 }
 .summit__info h1 {
   margin-top: 2.75rem;
@@ -881,7 +907,7 @@ svg {
 
 .summit__about {
   grid-row: 3;
-  grid-column: 1/3;
+  grid-column: 1/4;
   justify-self: center;
   margin-bottom: var(--global-margin);
   padding-inline: var(--global-padding);
@@ -1007,6 +1033,7 @@ svg {
   grid-row: 4;
   grid-column: 1/3;
   margin-right: 0.5rem;
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, calc(100% - 3rem) 100%, 0 100%);
 }
 @media (min-width: 40em) {
   .summit__team-photo_1 {
@@ -1020,6 +1047,7 @@ svg {
   grid-column: 2/4;
   margin-left: 0.5rem;
   justify-self: end;
+  clip-path: polygon(32px 0, 100% 0, 100% 100%, 0 100%);
 }
 @media (min-width: 40em) {
   .summit__team-photo_2 {
@@ -1211,8 +1239,11 @@ svg {
 \*------------------------------------*/
 #map {
   margin-block-end: 3rem;
+  padding: var(--global-padding);
 }
 #map > iframe {
+  margin-inline: var(--global-margin);
+  width: 100%;
   max-width: var(--page-width);
   margin-inline: auto;
   display: block;
@@ -1225,6 +1256,9 @@ svg {
   background: var(--light-gray);
   display: grid;
 }
+#testimonials svg {
+  fill: var(--secondary-color);
+}
 #testimonials > .stars {
   display: grid;
   grid-template-rows: 1fr 1.55fr;
@@ -1235,12 +1269,16 @@ svg {
 #testimonials > .stars > .svgs {
   grid-row: 1/3;
   justify-self: center;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--global-grid-gap);
 }
 #testimonials > .stars > .star__back {
   background: var(--medium-gray);
   grid-row: 2;
 }
 #testimonials > blockquote {
+  padding-block: 3rem;
   background: var(--medium-gray);
   text-align: center;
 }
@@ -1250,62 +1288,101 @@ svg {
 \*------------------------------------*/
 footer {
   background: var(--secondary-color);
+  color: var(--white);
   border-top: 0.5rem solid var(--primary-color);
   align-self: end;
   margin-bottom: 0;
 }
-
-.footer-contact-areas {
-  max-width: var(--page-width);
-  margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: var(--global-padding);
+footer svg {
+  fill: var(--white);
 }
-.footer-contact-areas > .contact__method {
+footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
+footer ul {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding: 1rem 1rem 3rem;
+  justify-content: flex-start;
+  gap: var(--global-grid-gap);
+}
+footer ul > * {
+  flex: 1 1;
+}
+footer .cross__wrapper .cross__hr {
+  border-color: var(--white);
+}
+footer .cross__wrapper .cross__divider {
+  border-color: var(--white);
+  background: var(--secondary-color);
+}
+
+:is(.footer__services, .footer__industries, .footer__copyright, .footer__contact--method) a:where(:hover, :focus) {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 20%));
+}
+
+footer .backed__svg svg:hover {
+  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 20%));
+}
+
+.footer__contacts {
+  max-width: var(--page-width);
+  padding-inline: var(--global-padding);
+  margin-inline: auto;
+  margin-block: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--global-grid-gap);
+  justify-content: space-around;
+}
+.footer__contacts > .footer__contact--method a {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: 0.5s ease;
+  border-radius: var(--backed-radius);
 }
-@media (min-width: 40em) {
-  .footer-contact-areas > .contact__method {
-    flex-direction: row;
-  }
-}
-.footer-contact-areas svg {
+.footer__contacts svg {
   grid-column: 1;
   grid-row: 1;
   align-self: center;
-  fill: var(--white);
 }
 @media (min-width: 90em) {
-  .footer-contact-areas svg {
+  .footer__contacts svg {
     justify-self: end;
   }
 }
-.footer-contact-areas a {
-  color: var(--white);
-}
-.footer-contact-areas p {
+.footer__contacts p {
   grid-column: 1;
   grid-row: 2;
   align-self: center;
 }
 @media (min-width: 90em) {
-  .footer-contact-areas p {
+  .footer__contacts p {
     grid-column: 2;
     grid-row: 1;
     justify-self: start;
   }
 }
 
-.copyright {
-  width: 100%;
-  margin-block-start: 1rem;
-  text-align: center;
-  color: var(--white);
+.footer__logo svg {
+  display: block;
+  margin-inline: auto;
+  width: calc(100% - 2rem);
+  max-width: 20rem;
+  margin-block-end: 3rem;
 }
-.copyright a {
-  color: var(--white);
+
+.footer__copyright {
+  text-align: center;
+}
+.footer__copyright a {
+  display: inline-block;
+  margin-block-end: 3rem;
 }
 
 .service-grid {

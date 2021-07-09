@@ -10,10 +10,14 @@ a:where(:hover, :focus) {
   text-decoration: underline;
 }
 
-.backed:where(:hover, :focus) {
+:is(.backed, .backed__svg svg) {
   padding: 0.5rem 1rem;
-  background: hsla(0, 0, 33%, 0.5);
   transition: .5s ease;
+  border-radius: var(--backed-radius);
+}
+
+:is(.backed, .backed__svg svg):where(:hover, :focus) {
+  background: hsla(0, 0%, 33%, 0.5);
 }
 
 .hidden-link {
