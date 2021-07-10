@@ -6,10 +6,13 @@
   background: var(--light-gray);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
   margin-block-end: 3rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--blackish);
+  }
 }
 
 #summit {
-  background: var(--light-gray);
   max-width: var(--page-width);
   margin-inline: auto;
   margin-bottom: 2rem;
@@ -116,6 +119,7 @@
 
   @media (min-width: $breakpoint__medium) {
     grid-column: 2/4;
+    clip-path: polygon(2rem 0,100% 0,calc(100% - 2rem) calc(100% - 2rem),0 100%);
   }
 
   display: grid;
@@ -132,16 +136,16 @@
   } // .gatsby-image-wrapper
 } // .summit__videobacker
 
-/* .blue-backer {
+.blue-backer {
   background: var(--secondary-color);
   width: 100%;
   height: 100%;
   z-index: 1;
   mix-blend-mode: multiply;
   aspect-ratio: 16 / 9;
-} */
+}
 
-.summit__videobacker--color {
+/* .summit__videobacker--color {
   grid-row: 2;
   grid-column: 1/4;
   z-index: -1;
@@ -153,7 +157,7 @@
   @media (min-width: $breakpoint__medium) {
     grid-column: 1/4;
   }
-}
+} */
 
 .summit__team-photos {
   clip-path: polygon(0 0, calc(100% - 1rem) 0, calc(100% - 3rem) 100%, 0 100%);
@@ -183,6 +187,7 @@
   @media (min-width: $breakpoint__medium) {
     grid-row: 3;
     grid-column: 1;
+    clip-path: polygon(3rem 0,100% 0,calc(100% - 3rem) 100%,0 100%);
   }
 } // .summit__team-photo_1
 
@@ -197,6 +202,8 @@
   @media (min-width: $breakpoint__medium) {
     grid-row: 1;
     grid-column: 3;
+    margin-block-start: 2.75rem;
+    clip-path: polygon(2rem 0,100% 0,calc(100% - 2rem) 100%,0 100%);
   }
 } // .gatsby-image-wrapper
 

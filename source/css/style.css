@@ -197,6 +197,7 @@ h6,
   font-family: var(--major-font-family);
   font-weight: 400;
   line-height: 1.15em;
+  margin-block-start: 0;
   margin-block-end: 1.15em;
 }
 
@@ -234,6 +235,9 @@ p {
   margin-bottom: 1.25rem;
 }
 
+blockquote {
+  margin: 0;
+}
 blockquote > :is(h1, h2, h3, h4, h5, h6, p)::before {
   content: '"';
   font-family: var(--major-font-family);
@@ -253,58 +257,6 @@ blockquote > footer {
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
-/*------------------------------------*\
-    #RESET
-\*------------------------------------*/
-/**
- * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
- */
-* {
-  box-sizing: border-box;
-}
-
-/**
- * 1) Zero out margins and padding for elements
- */
-html,
-body,
-div,
-object,
-iframe,
-p,
-blockquote,
-ol,
-ul,
-li,
-form,
-legend,
-label,
-table,
-header,
-footer,
-nav,
-#menu__big,
-section,
-figure {
-  margin: 0;
-  padding: 0;
-}
-
-/**
- * 1) Set HTML5 elements to display: block
- */
-header,
-footer,
-nav,
-#menu__big,
-section,
-article,
-figure,
-picture,
-img {
-  display: block;
-}
-
 /*------------------------------------*\
     #BODY
 \*------------------------------------*/
@@ -579,9 +531,15 @@ button, .button {
 
 .button.hollow {
   background-color: transparent;
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
   transition: 0.5s ease;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+@media (prefers-color-scheme: dark) {
+  .button.hollow {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
 }
 
 /*------------------------------------*\
@@ -659,6 +617,7 @@ main {
  * 1) Allows for images to flex with varying screen size
  */
 img {
+  vertical-align: middle;
   max-width: 100%;
   height: auto;
 }
@@ -728,6 +687,10 @@ svg {
 /*------------------------------------*\
   #CROSS
 \*------------------------------------*/
+hr {
+  border-color: var(--secondary-color);
+}
+
 .cross__wrapper {
   width: calc(100% - 2rem);
   display: grid;
@@ -750,6 +713,11 @@ svg {
   height: 1.6rem;
   background: var(--white);
   transform: skewX(-15deg);
+}
+@media (prefers-color-scheme: dark) {
+  .cross__wrapper .cross__divider {
+    background: var(--black);
+  }
 }
 
 /*------------------------------------*\
@@ -865,9 +833,13 @@ svg {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
   margin-block-end: 3rem;
 }
+@media (prefers-color-scheme: dark) {
+  .summit__backer {
+    background: var(--blackish);
+  }
+}
 
 #summit {
-  background: var(--light-gray);
   max-width: var(--page-width);
   margin-inline: auto;
   margin-bottom: 2rem;
@@ -978,6 +950,7 @@ svg {
 @media (min-width: 40em) {
   .summit__videobacker {
     grid-column: 2/4;
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) calc(100% - 2rem), 0 100%);
   }
 }
 .summit__videobacker > * {
@@ -988,29 +961,28 @@ svg {
   height: 100%;
 }
 
-/* .blue-backer {
+.blue-backer {
   background: var(--secondary-color);
   width: 100%;
   height: 100%;
   z-index: 1;
   mix-blend-mode: multiply;
-  aspect-ratio: 16 / 9;
-} */
-.summit__videobacker--color {
+  aspect-ratio: 16/9;
+}
+
+/* .summit__videobacker--color {
   grid-row: 2;
   grid-column: 1/4;
   z-index: -1;
   clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
   background: var(--secondary-color);
   mix-blend-mode: multiply;
-  aspect-ratio: 16/9;
-}
-@media (min-width: 40em) {
-  .summit__videobacker--color {
+  aspect-ratio: 16 / 9;
+
+  @media (min-width: $breakpoint__medium) {
     grid-column: 1/4;
   }
-}
-
+} */
 .summit__team-photos, .summit__team-photo_2, .summit__team-photo_1 {
   clip-path: polygon(0 0, calc(100% - 1rem) 0, calc(100% - 3rem) 100%, 0 100%);
   margin-bottom: var(--global-margin);
@@ -1039,6 +1011,7 @@ svg {
   .summit__team-photo_1 {
     grid-row: 3;
     grid-column: 1;
+    clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
   }
 }
 
@@ -1053,6 +1026,8 @@ svg {
   .summit__team-photo_2 {
     grid-row: 1;
     grid-column: 3;
+    margin-block-start: 2.75rem;
+    clip-path: polygon(2rem 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
   }
 }
 
@@ -1162,41 +1137,70 @@ svg {
 .service {
   display: grid;
   margin-bottom: 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   background: var(--light-gray);
+}
+@media (prefers-color-scheme: dark) {
+  .service {
+    background: var(--blackish);
+  }
 }
 @media (min-width: 40em) {
   .service {
     grid-template-columns: 1fr 1fr;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   }
 }
-.service > .service__image {
-  grid-row: 1/3;
+.service > * {
   grid-column: 1;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+}
+.service > .service__image {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   z-index: 2;
+  grid-row: 1;
+}
+@media (min-width: 40em) {
+  .service > .service__image {
+    grid-row: 1/3;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+  }
 }
 .service > .service__title--back {
-  grid-row: 1;
-  grid-column: 1/3;
   background: var(--secondary-color);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
+  grid-row: 1/3;
+}
+@media (min-width: 40em) {
+  .service > .service__title--back {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
 }
 .service > .service__title {
-  grid-row: 1;
-  grid-column: 2;
   margin-block-start: 3rem;
   margin-inline-start: 3rem;
   z-index: 2;
+  grid-row: 2;
+}
+@media (min-width: 40em) {
+  .service > .service__title {
+    grid-row: 1;
+    grid-column: 2;
+  }
 }
 .service > .service__title > a {
   color: var(--white);
 }
 .service > .service__text {
-  grid-row: 2;
-  grid-column: 2;
   margin-block-start: 3rem;
+  margin-block-end: 3rem;
   margin-inline-start: 3rem;
+  grid-row: 3;
+}
+@media (min-width: 40em) {
+  .service > .service__text {
+    grid-row: 2;
+    grid-column: 2;
+  }
 }
 
 /*------------------------------------*\
@@ -1218,9 +1222,14 @@ svg {
 }
 
 .industry {
-  background: var(--light-gray);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   margin-block-end: 3rem;
+  background: var(--light-gray);
+}
+@media (prefers-color-scheme: dark) {
+  .industry {
+    background: var(--blackish);
+  }
 }
 .industry > .industry__title > a {
   display: block;
@@ -1253,8 +1262,13 @@ svg {
   #TESTIMONIALS
 \*------------------------------------*/
 #testimonials {
-  background: var(--light-gray);
   display: grid;
+  background: var(--light-gray);
+}
+@media (prefers-color-scheme: dark) {
+  #testimonials {
+    background: var(--black);
+  }
 }
 #testimonials svg {
   fill: var(--secondary-color);
@@ -1274,13 +1288,23 @@ svg {
   gap: var(--global-grid-gap);
 }
 #testimonials > .stars > .star__back {
-  background: var(--medium-gray);
   grid-row: 2;
+  background: var(--medium-gray);
+}
+@media (prefers-color-scheme: dark) {
+  #testimonials > .stars > .star__back {
+    background: var(--blackish);
+  }
 }
 #testimonials > blockquote {
   padding-block: 3rem;
-  background: var(--medium-gray);
   text-align: center;
+  background: var(--medium-gray);
+}
+@media (prefers-color-scheme: dark) {
+  #testimonials > blockquote {
+    background: var(--blackish);
+  }
 }
 
 /*------------------------------------*\
@@ -1369,6 +1393,10 @@ footer .backed__svg svg:hover {
   }
 }
 
+.footer__logo {
+  max-width: 50%;
+  margin-inline: auto;
+}
 .footer__logo svg {
   display: block;
   margin-inline: auto;

@@ -2,6 +2,10 @@
   #CROSS
 \*------------------------------------*/
 
+hr {
+  border-color: var(--secondary-color);
+}
+
 .cross__wrapper {
   width: calc(100% - 2rem);
   display: grid;
@@ -9,6 +13,10 @@
   max-width: var(--page-width);
   margin-inline: auto;
   margin-block-end: 3rem;
+
+  @media (prefers-color-scheme: dark) {
+    
+  }
 
   > * {
     grid-row: 1;
@@ -26,5 +34,9 @@
     height: 1.6rem;
     background: var(--white);
     transform: skewX(-15deg); // guess and check
+
+    @media (prefers-color-scheme: dark) {
+      background: var(--black);
+    }
   }
 }

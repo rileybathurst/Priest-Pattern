@@ -7,6 +7,7 @@
  * 1) Allows for images to flex with varying screen size
  */
 img {
+  vertical-align: middle; // stupid bottom border reset
   max-width: 100%;
   height: auto;
 }

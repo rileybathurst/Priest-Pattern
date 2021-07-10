@@ -97,6 +97,9 @@ footer .backed__svg svg:hover {
 }
 
 .footer__logo {
+  max-width: 50%;
+  margin-inline: auto;
+
   svg {
     display: block;
     margin-inline: auto;

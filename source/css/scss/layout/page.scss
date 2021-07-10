@@ -21,33 +21,52 @@
 .service {
   display: grid;
   margin-bottom: 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   background: var(--light-gray);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--blackish);
+  }
 
   @media (min-width: $breakpoint__medium) {
     grid-template-columns: 1fr 1fr;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
+  }
+
+  > * {
+    grid-column: 1;
   }
 
   > .service__image {
-    grid-row: 1/3;
-    grid-column: 1;
-    clip-path: polygon(0 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
     z-index: 2; // above the .service__title--back
+    grid-row: 1;
+    
+    @media (min-width: $breakpoint__medium) {
+      grid-row: 1/3;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 2rem) 100%, 0 100%);
+    }
   }
 
   > .service__title--back {
-    grid-row: 1;
-    grid-column: 1/3;
     background: var(--secondary-color);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
+    grid-row: 1/3;
+    @media (min-width: $breakpoint__medium) {
+      grid-column: 1/3;
+      grid-row: 1;
+    }
   }
 
+
   > .service__title {
-    grid-row: 1;
-    grid-column: 2;
     margin-block-start: 3rem;
     margin-inline-start: 3rem;
     z-index: 2; // above the .service__title--back
+    grid-row: 2;
+    @media (min-width: $breakpoint__medium) {
+      grid-row: 1;
+      grid-column: 2;
+    }
     
     > a {
       color: var(--white);
@@ -55,10 +74,15 @@
   }
 
   > .service__text {
-    grid-row: 2;
-    grid-column: 2;
     margin-block-start: 3rem;
+    margin-block-end: 3rem;
     margin-inline-start: 3rem;
+    grid-row: 3;
+    
+    @media (min-width: $breakpoint__medium) {
+      grid-row: 2;
+      grid-column: 2;
+    }
   }
 }
 
@@ -83,9 +107,13 @@
 }
 
 .industry {
-  background: var(--light-gray);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%);
   margin-block-end: 3rem;
+  background: var(--light-gray);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--blackish);
+  }
 
   > .industry__title {
     
@@ -127,8 +155,11 @@
 \*------------------------------------*/
 
 #testimonials {
-  background: var(--light-gray);
   display: grid;
+  background: var(--light-gray);
+  @media (prefers-color-scheme: dark) {
+    background: var(--black);
+  }
 
   > h3 {}
 
@@ -154,15 +185,21 @@
     }
 
     > .star__back {
-      background: var(--medium-gray);
       grid-row: 2;
+      background: var(--medium-gray);
       
+      @media (prefers-color-scheme: dark) {
+        background: var(--blackish);
+      }
     }
   }
 
   > blockquote {
     padding-block: 3rem;
-    background: var(--medium-gray);
     text-align: center;
+    background: var(--medium-gray);
+    @media (prefers-color-scheme: dark) {
+      background: var(--blackish);
+    }
   }
 }
