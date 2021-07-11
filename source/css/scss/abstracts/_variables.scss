@@ -71,12 +71,11 @@
 // needs to be a sass variable as well
 // https://www.w3.org/TR/css-variables-1/#using-variables
 $general-measure: 30rem; // document this somewhere
-$header-menu-size: 70rem;
 $page-width: 77em; // this should probably meet up with breakpoints
 
 :root {
     --general-measure: 30rem;
-    --header-menu-size: 70rem;
+    --header-menu-size: 56rem;
     --page-width: 77rem;
 }
 

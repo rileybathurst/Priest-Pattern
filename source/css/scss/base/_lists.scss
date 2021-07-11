@@ -62,7 +62,7 @@ nav {
   // sliding menu
   display: inline-block;
   transition: 2s ease; // sliding menu
-  position: absolute;
+  position: relative;
   z-index: 1; // check its above the gallery on the front page
   margin-bottom: 0;
 
@@ -97,12 +97,14 @@ nav {
 // 🚨 inception only 3 deep
 
 .active {
-  margin-top: 3.9rem; // enough to show the home line but small enough to hide any gap
+  // margin-top: 3.9rem; // enough to show the home line but small enough to hide any gap
   // this can be done properly
+  top: 0;
 }
 
 .inactive {
-  margin-top: -100%;
+  // margin-top: -100%;
+  top: -100%;
 }
 
 // 🚨 I need more sheets

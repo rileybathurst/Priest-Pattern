@@ -14,10 +14,6 @@ hr {
   margin-inline: auto;
   margin-block-end: 3rem;
 
-  @media (prefers-color-scheme: dark) {
-    
-  }
-
   > * {
     grid-row: 1;
     grid-column: 1;

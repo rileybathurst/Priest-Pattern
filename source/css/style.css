@@ -71,7 +71,7 @@
  */
 :root {
   --general-measure: 30rem;
-  --header-menu-size: 70rem;
+  --header-menu-size: 56rem;
   --page-width: 77rem;
 }
 
@@ -130,6 +130,11 @@ body {
 \*------------------------------------*/
 a {
   color: var(--secondary-color);
+}
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--primary-color);
+  }
 }
 
 a:where(:hover, :focus) {
@@ -368,7 +373,7 @@ nav, #menu__big {
   background: hsl(var(--primary-color-b), calc(var(--primary-color-l) - 10%));
   display: inline-block;
   transition: 2s ease;
-  position: absolute;
+  position: relative;
   z-index: 1;
   margin-bottom: 0;
 }
@@ -397,11 +402,11 @@ nav, #menu__big {
 }
 
 .active {
-  margin-top: 3.9rem;
+  top: 0;
 }
 
 .inactive {
-  margin-top: -100%;
+  top: -100%;
 }
 
 #menu_toggle {
@@ -1344,7 +1349,7 @@ footer .cross__wrapper .cross__divider {
   background: var(--secondary-color);
 }
 
-:is(.footer__services, .footer__industries, .footer__copyright, .footer__contact--method) a:where(:hover, :focus) {
+:is(.footer__backed, .footer__services, .footer__industries, .footer__copyright, .footer__contact--method) a:where(:hover, :focus) {
   background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 20%));
 }
 

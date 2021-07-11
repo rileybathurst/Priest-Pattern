@@ -45,7 +45,7 @@ footer {
 }
 
 // needs specificity of class
-:is(.footer__services, .footer__industries, .footer__copyright, .footer__contact--method) a:where(:hover, :focus) {
+:is(.footer__backed, .footer__services, .footer__industries, .footer__copyright, .footer__contact--method) a:where(:hover, :focus) {
   background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 20%));
 }
 
