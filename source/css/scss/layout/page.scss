@@ -201,3 +201,26 @@
     }
   }
 }
+
+/*------------------------------------*/
+//  #single
+/*------------------------------------*/
+
+.single__cover {
+  max-width: var(--page-width);
+  margin-inline: auto;
+  margin-block-end: 3rem;
+  display: block;
+}
+
+.single__title {
+  max-width: var(--page-width);
+  margin-inline: auto;
+  margin-block-end: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    flex: 1 1;
+  }
+}

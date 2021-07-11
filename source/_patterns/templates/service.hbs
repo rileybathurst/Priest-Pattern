@@ -1,19 +1,17 @@
 {{> organisms-header }}
-<main role="main" class="page">
-  <p>Cover</p>
+{{> molecules-header-contact }}
+<main role="main" class="single">
+  <img src="{{ src }}" alt="{{ alt }}" class="single__cover"/>
 
-  <hr>
-  {{!-- {{> atoms-cross }} --}}
+  {{> atoms-cross-hr }}
 
-  <h1>Service</h1>
-  <p>lorem ipsum</p>
+  <div class="single__title">
+    <h1>Service</h1>
+    <p>lorem ipsum</p>
+  </div>
 
   {{> molecules-block }}
-  {{> molecules-block }}
 
-  <section>
-    <p>gallery</p>
-  </section>
 </main>
 
 {{> organisms-footer }}
