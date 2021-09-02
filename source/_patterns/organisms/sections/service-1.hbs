@@ -1,0 +1,50 @@
+<div className="tasks__wrapper">
+        {data.allStrapiService.edges.map((document) => (
+          <div key={document.node.id} className="tasks--outer">
+            <section className="tasks">
+              <h3 className="tasks__title h4">
+                <Link to={`/services/${document.node.slug}`}>
+                  {document.node.title}
+                </Link>
+              </h3>
+
+              <div className="tasks__background--upper shadow">
+                {/* stay gold */}
+              </div>
+
+              <Link
+                to={`/services/${document.node.slug}`}
+                className="tasks__image shadow"
+                title={document.node.title}
+              >
+                <GatsbyImage
+                  image={
+                    document.node.Cover?.localFile?.childImageSharp
+                      ?.gatsbyImageData
+                  }
+                  alt={document.node.Cover?.alternativeText}
+                  className="shadow"
+                />
+              </Link>
+
+              <div className="tasks__info">
+                <Byline byline={document.node.byline} />
+                <div className="clipshaper">
+                  <div className="clipper">{/* stay gold*/}</div>
+                  <p>{document.node.Content}</p>
+                </div>
+                <Link
+                  to={`/services/${document.node.slug}`}
+                  className="tasks__more"
+                >
+                  {/* <span className="button hollow"> */}
+                  More about {document.node.title}
+                  {/* </span> */}
+                </Link>
+              </div>
+            </section>
+
+            <Cross />
+          </div>
+        ))}
+      </div>

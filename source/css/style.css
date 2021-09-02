@@ -330,7 +330,6 @@ a:where(:hover, :focus) {
 /**
   * Remove list styles from unordered and ordered lists
   */
-ol,
 ul {
   list-style: none;
 }
@@ -434,6 +433,146 @@ nav, #menu__big {
 }
 #menu__big a {
   padding-inline: 2rem;
+}
+
+/*------------------------------------*/
+/*------------------------------------*/
+.testol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+.testol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.testol > li:before {
+  content: counters(item, ".") ") ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+.testol > li > ol > li {
+  margin: 0;
+  counter-increment: number;
+}
+
+.testol > li > ol > li:before {
+  content: counters(number, ".") ") ";
+}
+
+.testol > li > ol > li::marker {
+  content: counters(item, ".") " ";
+}
+
+/*------------------------------------*/
+/*------------------------------------*/
+.terms {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+  max-width: 45rem;
+}
+.terms > li {
+  display: table;
+  counter-increment: item;
+  margin-block-end: 2rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--primary-color);
+}
+.terms > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+  color: var(--iron);
+}
+.terms li > ul {
+  margin-block-start: 0.5rem;
+  padding-inline-start: 0.25rem;
+  color: var(--iron);
+}
+.terms li > ol > li {
+  margin: 0;
+}
+.terms li > ol > li:before {
+  content: counters(item, ".") "🦄 ";
+  content: counters(item, ".") ". ";
+  color: palegreen;
+}
+.terms li > ol > li::marker {
+  color: palevioletred;
+}
+
+.ol__alpha {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-width: 45rem;
+}
+.ol__alpha > li {
+  counter-increment: letter;
+  display: table;
+  padding-block-start: 1rem;
+}
+.ol__alpha > li::before {
+  content: "(" counter(letter, lower-alpha) ") " !important;
+  padding-inline-end: 0.5rem;
+}
+
+/*------------------------------------*/
+/*------------------------------------*/
+.gridlist {
+  list-style-type: none;
+  counter-reset: grid;
+  /*   > li > ol > li {
+      display: grid;
+    }
+
+    li > ol > li:before {
+      content: counters(grid, ".") ". ";
+    } */
+}
+.gridlist > li:before {
+  content: counters(grid, ".") ". ";
+  grid-row: 1;
+  grid-column: -1;
+}
+.gridlist > li {
+  counter-increment: grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*------------------------------------*/
+/*------------------------------------*/
+.gridlist {
+  list-style-type: none;
+  counter-reset: fl;
+  max-width: 30rem;
+}
+.gridlist > li:before {
+  content: counters(fl, ".") ". ";
+  grid-row: 1;
+  grid-column: -1;
+}
+.gridlist > li {
+  counter-increment: fl;
+  display: flex;
+}
+.gridlist > li > ol {
+  margin-block-start: 1.5rem;
+}
+.gridlist > li > ol > li:before {
+  content: counters(fl, ".") ". ";
+  background: lightyellow;
+}
+.gridlist > li > ol > li::marker {
+  color: hotpink;
 }
 
 /*------------------------------------*\
