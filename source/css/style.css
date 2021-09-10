@@ -1504,9 +1504,20 @@ hr {
 /*------------------------------------*/
 /*------------------------------------*/
 .ic {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 30rem));
+  /*   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 30rem)); // guess and check
+    gap: 1rem; */
+  display: flex;
+  flex-flow: row wrap;
   gap: 1rem;
+  justify-content: center;
+  /*   > *:last-child {
+      align-self: flex-start;
+    } */
+}
+.ic > * {
+  flex: 1 1 var(--general-measure);
+  max-width: var(--general-measure);
 }
 
 .i {

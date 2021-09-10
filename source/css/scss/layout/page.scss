@@ -259,10 +259,31 @@
 
 // I dont like these names yet
 
+// helium is elemt 2
+// layer is nice but could be other things
+// layer-card // kinda like layer cake which is nicer
+// structure
+// Monatomic is a rad word
+// diatomic-card // defined and interesting and related lets do this
+
 .ic {
-  display: grid;
+/*   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 30rem)); // guess and check
+  gap: 1rem; */
+
+  display: flex;
+  flex-flow: row wrap;
   gap: 1rem;
+  justify-content: center;
+
+  > * {
+    flex: 1 1 var(--general-measure);
+    max-width: var(--general-measure);
+  }
+
+/*   > *:last-child {
+    align-self: flex-start;
+  } */
 }
 
 .i {
